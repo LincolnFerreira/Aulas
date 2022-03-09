@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Entrada 01</title>
+</head>
+<body>
+
+    <div style="width: 33.33%; height: 10px; float: left;"></div>
+
+    <div style="width: 33.33%; height: 10px; float: left; margin-top: 5%; margin-left: 5%;">
+        <img src="cerebro-e-sono.png" style="width:45%; margin-left: 5%;">
+        <br>
+        <span style="margin-left:8%;">Quantas horas dormiu?</span>
+        <br>
+        <br>
+
+        <input type="number" id="entradaDorme" placeholder="Horas dormidas">
+
+        <button onclick="calcSono();">Calcular Sono</button>
+
+        <div >
+            <p id="texto" >
+            <p id="faseUm" >
+            <p id="faseDois" >
+            <p id="faseTres" >
+            <p id="faseRem" >
+        </div>
+
+    </div>
+    <div style="width: 33.33%; height: 10px; float: left;"></div>
+
+</body>
+</html>
+
+<script>
+
+    function calcSono(){
+    var horasDormidas = Number(entradaDorme.value);
+    var calculaHoras = Number(horasDormidas/100);
+
+    texto.innerHTML = "";
+    faseUm.innerHTML =  "";
+    faseUm.innerHTML = "";
+    faseUm.innerHTML = "";
+    
+    texto.innerHTML += "<span style='margin-left:6%'>Ao dormir <u> " + horasDormidas + " </u> horas, você dormiu:</span>";
+    faseUm.innerHTML += "<u style='margin-left:10%'> "+ (calculaHoras * 5) + " </u> horas na <b> fase 1 </b><br>";
+    faseUm.innerHTML += "<u style='margin-left:10%'> "+ (calculaHoras * 45) + " </u> horas na <b> fase 2 </b><br>";
+    faseUm.innerHTML += "<u style='margin-left:10%'> "+ (calculaHoras * 30) + " </u> horas na <b> fase 3 </b><br>";
+    faseUm.innerHTML += "<u style='margin-left:10%'> "+ (calculaHoras * 20) + " </u> horas na <b> fase REM </b><br>";
+    }
+</script>

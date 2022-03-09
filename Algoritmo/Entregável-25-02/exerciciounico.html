@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Entrada 02</title>
+</head>
+<body>
+    <div style="width: 20%;">
+        Quantidade de votos: <input type="number" id="candidatoA" placeholder="Candidato A">
+        Quantidade de votos: <input type="number" id="candidatoB" placeholder="Candidato B">
+        Quantidade de votos: <input type="number" id="votoBranco" placeholder="Em Branco">
+        Quantidade de votos: <input type="number" id="votoNulo" placeholder="Nulo">
+    </div>
+    <br>
+    <br>
+    <br>
+    <button style="margin-left: 10%;" onclick="resultado()">Resultado de votaçoes</button>
+    <br>
+    <br>
+    <br>
+
+        <div id="div_total"></div>
+        <br>
+        
+        <div id="div_candidatoA"></div>
+        <br>
+        
+        <div id="div_candidatoB"></div>
+        <br>
+
+        <div id="div_invalidos"></div>
+        <br>
+
+</body>
+</html>
+
+<script>
+    function resultado(){
+         var candA = Number(candidatoA.value);
+
+         var candB = Number(candidatoB.value);
+
+         var branco = Number(votoBranco.value);
+
+         var nulo = Number(votoNulo.value);
+
+         var invalido = Number(branco + nulo);
+
+         var total = candA + candB + invalido;
+
+        div_total.innerHTML = "";
+        div_candidatoA.innerHTML = "";
+        div_candidatoB.innerHTML = "";
+        div_invalidos.innerHTML =  "";
+
+        div_total.innerHTML =
+         `<b>Total de votos:</b> <u><b> ${total} </b></u>`;
+        
+         div_candidatoA.innerHTML =
+         `<b>Candidato A:</b> ${(candA * 100/total)}% (${candA} votos)`;
+        
+         div_candidatoB.innerHTML =
+         `<b>Candidato B:</b> ${(candB * 100/total)}% (${candB} votos)`;
+        
+         div_invalidos.innerHTML =
+         `<b>Inválidos:</b> ${(invalido * 100/total)}% (${invalido} votos)`;
+
+    }
+</script>

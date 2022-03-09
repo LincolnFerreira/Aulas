@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Entrada 03</title>
+</head>
+<body>
+    <div style="width: 25%;">
+        Quantidade de votos Candidato A: <input type="number" id="candidatoA" placeholder="Candidato A" style="margin-bottom: 2%;" maxlength="4">
+        Quantidade de votos Candidato B: <input type="number" id="candidatoB" placeholder="Candidato B" style="margin-bottom: 2%;">
+        Quantidade de votos em Branco: <input type="number" id="votoBranco" placeholder="Em Branco" style="margin-bottom: 2%;">
+        Quantidade de votos Nulo: <input type="number" id="votoNulo" placeholder="Nulo" style="margin-bottom: 2%;">
+    </div>
+    <br>
+    <br>
+    <br>
+    <button style="margin-left: 10%;" onclick="resultado()">Resultado de votaçoes</button>
+    <br>
+    <br>
+    <br>
+
+        <div id="div_total"></div>
+        <br>
+        <div id="div_candidatoA"></div>
+
+        <div id="div_barra_verde" ></div>
+        <br>
+
+        <div id="div_candidatoB"></div>
+
+        <div id="div_barra_vermelho" style="background-color: red;"></div>
+        <br>
+
+        <div id="div_invalidos"></div>
+
+        <div id="div_barra_cinza" style="background-color: grey;"></div>
+
+        <br>
+</body>
+</html>
+
+<script>
+    function resultado(){
+         var candA = Number(candidatoA.value);
+
+         var candB = Number(candidatoB.value);
+
+         var branco = Number(votoBranco.value);
+
+         var nulo = Number(votoNulo.value);
+
+         var invalido = Number(branco+nulo);
+
+         var total = Number(candA + candB + invalido);
+
+        //limpa innerHTML para não acumular na mesma linha
+
+        div_total.innerHTML = "";
+        div_candidatoA.innerHTML = "";
+        div_candidatoB.innerHTML = "";
+        div_invalidos.innerHTML =  "";
+
+        //faz aparecer o innerHTML com os resultados dos values e cores
+
+        div_total.innerHTML +=
+         `<b>Total de votos: </b> <u><b> ${total}  </b></u>`;
+
+        div_candidatoA.innerHTML +=
+         `<b>Candidato A:</b> ${candA * 100/total} % (${candA} votos)`;
+
+        div_barra_verde.innerHTML ;
+        div_barra_verde.style.width = `${(candA * 100/total)}%` ;
+        div_barra_verde.style.height = "30px";
+        div_barra_verde.style.backgroundColor = "green";
+
+        div_candidatoB.innerHTML +=
+         `<b>Candidato B:</b> ${(candB * 100/total)}% (${candB} votos)`;
+        
+        div_barra_vermelho.innerHTML ;
+        div_barra_vermelho.style.width =` ${(candB * 100/total)}%` ;
+        div_barra_vermelho.style.height = "30px";
+        div_barra_vermelho.style.backgroundColor = "red";
+
+        div_invalidos.innerHTML +=
+         `<b>Inválidos:</b> ${(invalido * 100/total)}% (${invalido} votos)`;
+        
+        div_barra_cinza.innerHTML ;
+        div_barra_cinza.style.width = `${(invalido * 100/total)}%` ;
+        div_barra_cinza.style.height = "30px";
+        div_barra_cinza.style.backgroundColor = "grey";
+    }
+</script>

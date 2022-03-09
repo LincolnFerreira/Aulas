@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Entrada 04</title>
+</head>
+<body>
+    
+   
+    
+    
+    <div style="width: 33.33%; height: 10px; float: left;"></div>
+    
+    <div style="width: 33.33%; height: 10px; float: left; margin-top: 2%; margin-left: 5%;">
+
+        <span>Digite um número para ver sua <b>"tabuada":</b></span>
+        <br>
+        <br>
+        <br>
+
+        <div style="margin-left: 12%;">
+            <input id="input_numero" type="number" style="width:100px;" placeholder="N°"> 
+            <br>
+
+            <button onclick="tabuada();" style="margin-top: 5%;margin-left: 2%; ">Ver Tabuada</button>
+
+            <p id="mostraTabuada" style="margin-left: 3%; font-size: 30px;" ></p>
+
+        </div>
+
+    </div>
+    
+    <div style="width: 33.33%; height: 10px; float: left;"></div>
+
+</body>
+</html>
+
+<script>
+
+    function tabuada(){
+        var numeral = Number(input_numero.value);
+        mostraTabuada.innerHTML =
+        numeral + " x 1 = "+ (numeral*1)+"<br>"+
+        numeral + " x 2 = "+ (numeral*2)+"<br>"+
+        numeral + " x 3 = "+ (numeral*3)+"<br>"+
+        numeral + " x 4 = "+ (numeral*4)+"<br>"+
+        numeral + " x 5 = "+ (numeral*5)+"<br>"+
+        numeral + " x 6 = "+ (numeral*6)+"<br>"+
+        numeral + " x 7 = "+ (numeral*7)+"<br>"+
+        numeral + " x 8 = "+ (numeral*8)+"<br>"+
+        numeral + " x 9 = "+ (numeral*9)+"<br>";
+    }
+
+</script>

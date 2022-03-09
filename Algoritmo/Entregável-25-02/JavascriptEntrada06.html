@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Entrada 06</title>
+</head>
+<body>
+    <div style="width: 33.33%; float: left; height: 10px;"></div>
+
+    <div style="width: 33.33%; float: left; padding-left:5%" >
+        <h2 style="padding-left:10%"> Vale transporte</h1>
+            <img src="onibus.png" style="width:10%; padding-left:17%">
+            <br>
+        
+        Qual o valor da passagem ? <input id="input_valor">
+        <br>
+        <br>
+
+        Quantas viagens faz por mês? <input id="input_qtdViagem">
+        <br>
+        <br>
+        
+        Distancia do trabalho para casa (em <b>KM</b>) ? <input id="input_km">
+        <br>
+        <br>
+
+        <button onclick="calcVt();" style="margin-left: 15%"> Calcular VT </button>
+        <br>
+        <br>
+        <br>
+
+        <div id="div_resultado" style="padding-left:10%"></div>
+
+    </div>
+
+    <div style="width: 33.33%; float: left; height: 10px;"></div>
+   
+    
+</body>
+</html>
+
+<script>
+    function calcVt(){
+        //resultado do calcApp é a quantidade de viagens de uber efetivados
+        var qtdApp = ((Number(input_qtdViagem.value) * 10) / 100);
+
+        //total de dinheiro gasto de app 
+        var gastoComApp = (0.75 * qtdApp) * Number(input_km.value);
+
+        // Soma tanto do valor usado em app quanto de onibus
+        var calcTotal = ((Number(input_valor.value) * Number(input_qtdViagem.value) - qtdApp)+ gastoComApp );
+
+        div_resultado.innerHTML =
+        `Você vai gastar R$<b> ${calcTotal} </b> por mês com transporte`;
+    };
+</script>

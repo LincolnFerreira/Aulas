@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;">
+    <div style="width: 33.33%; height: 200px; float: left;"></div>
+
+    <div style="width: 33.33%; height: 200px; float: left; margin-left: 5%;">
+        <h1>
+
+            <span style="background: -webkit-linear-gradient(rgb(0, 255, 13), rgb(238, 255, 0));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;">
+            Brasil</span>
+             <b style="color: white;">X</b> <span style="background: -webkit-linear-gradient(rgb(255, 0, 0), rgb(245, 255, 109));
+             -webkit-background-clip: text;
+             -webkit-text-fill-color: transparent;">
+             Alemanha</span>
+            </h1>
+            
+            <div style="margin-left: -5%; margin-top: 7%;">
+
+            <button id="button_brasil" onclick="golBrasil();">Gol do Brasil</button>
+            <button id="button_alemanha" onclick="golAlemanha();">Gol da Alemanha</button>
+            <button id="button_recomecar" onclick="recomecar();">Recomeçar partida</button>
+            
+            </div>
+            
+            <br>
+            <br>
+            <br>
+
+  
+        <b style="color: white; margin-left: 10%;">Tempo real do jogo:</b> 
+            <h4 id="gol" style="width: fit-content; margin-left: 10%;"></h4>
+    </div>
+
+
+    <div style="width: 33.33%; height: 500px; float: left;"></div>
+
+</body>
+</html>
+
+    <script>
+    function recomecar(){
+        gol.innerHTML = "";
+    };
+
+    function golBrasil(){
+        gol.innerHTML += "<div id='p_brasil' style='color:green'> É goooolll do Brasil!!! </div> <br>"  ;
+
+    };
+
+    function golAlemanha(){
+        gol.innerHTML += "<div id='p_alemanha' style='background-color:red; color:yellow'> É goooolll da Alemanha!!! </div> <br>";
+    };
+
+</script>
+

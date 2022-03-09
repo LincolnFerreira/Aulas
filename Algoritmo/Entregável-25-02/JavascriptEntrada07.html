@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Entrada 07</title>
+</head>
+<body>
+    <div style="width: 33.33%; float: left; height: 10px;"></div>
+    <div style="width: 33.33%; float: left; height: 10px; padding-left:5%; padding-top:2%">
+        <h3 style="margin-left:13%"> Calculadora de Frequência</h3>
+        <br>
+        
+        <img src="aluno.png" style="width:20%; margin-left:15%">
+        <br>
+
+        Nome do Aluno: <input id="input_nomeAluno">
+        <br>
+        <br>    
+        
+        Quantidade de aulas totais do curso: <input id="input_qtdTotalCurso">
+        <br>
+        <br>   
+        
+        Quantidade de aulas que faltou: <input id="input_qtdFalta">
+        <br>
+        <br>
+        
+        <button onclick="calcFreq();">Calcular Frequência</button>
+        <br>
+        <br>
+    
+        <div id="resultadoCalc" style="color: blue;"></div>
+        <br>
+        <br>
+        
+        <div id="div_barra" ></div>
+    </div>
+    <div style="width: 33.33%; float: left; height: 10px;"></div>
+    
+</body>
+</html>
+
+<script>
+    function calcFreq(){
+        var totalFreq = (Number(input_qtdFalta.value * 100) / Number(input_qtdTotalCurso.value));
+
+
+        resultadoCalc.innerHTML = "Olá, "+ input_nomeAluno.value +"! Sua frequência foi de <b style='color:green;''>"+ totalFreq +"%</b>";
+        div_barra.style.height="20px";
+        div_barra.style.width=totalFreq+"%";
+        div_barra.style.backgroundColor="rgb(131, 12, 12)";
+
+    }
+</script>

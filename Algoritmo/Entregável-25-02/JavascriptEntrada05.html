@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Entrada 05</title>
+</head>
+<body>
+    <div style="width: 33.33%; height: 10px; float: left;"> </div>
+    <div style="width: 33.33%; height: 10px; float: left; margin-left: 5%;">
+      
+        <img src="pizza.png" style="width: 10%; margin-left: 15.5%;">
+        <br>
+        Qual o sabor da pizza ? <input id="input_pizza" style="margin-top: 2%;">
+        <br>
+        <br>
+        Qual o o preço da pizza ? <input id="input_preco" style="margin-top: 2%;">
+        <br>
+        <br>
+        Quantas pessoas vão comer? <input id="input_pessoas" style="margin-top: 2%;">
+        <br>
+        <br>
+        
+        <button onclick="precoPizza();" style="margin-left: 10%; margin-top: 5%; margin-bottom: 5%;">Ver valor por amigo</button>
+
+        <div id="div_precoPizza" style="margin-left: -5%;">
+            
+        </div>
+    </div>
+    <div style="width: 33.33%; height: 10px; float: left;"> </div>
+</body>
+</html>
+
+<script>
+    function precoPizza(){
+        var preco = Number(input_preco.value);
+        var qtdPessoa = Number(input_pessoas.value);
+        var caixinha = (preco * 10) / 100;
+        var valorTotal = Number(preco + caixinha);
+        var calcDivisao = Number(valorTotal / qtdPessoa);
+
+        div_precoPizza.innerHTML = "Cada amigo vai colaborar com R$<b>" + calcDivisao + "</b> para a pizza de <b>"+ input_pizza.value +"</b";
+
+    }
+</script>
