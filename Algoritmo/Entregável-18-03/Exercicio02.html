@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button{
+        margin: 20px;
+    }
+
+</style>
+<body>
+    
+    <span>Informe seu salário:</span><input id="input_salario">
+    <br>
+    
+    <button onclick="confirmaSalario()">Confirmar Salário</button>
+    <br>
+    
+    <button onclick="pagaConta100()">Pagar conta de 100</button>
+    <br>
+    
+    <button onclick="pagaConta500()">Pagar conta de 500</button>
+    <br>
+    
+    <button onclick="ganharNaLoteria()">Ganhar na loteria</button>
+    <br>
+    <br>
+    <br>
+
+    <span id="span_GranaAtual">0</span>
+</body>
+</html>
+
+<script>
+
+    function confirmaSalario(){
+        var salario = Number(input_salario.value);
+        span_GranaAtual.innerHTML = "";
+        span_GranaAtual.innerHTML = salario;
+
+    }
+
+    function pagaConta100(){
+        var granaAtual = Number(span_GranaAtual.innerHTML);
+        var pagarConta = granaAtual - 100;
+        span_GranaAtual.innerHTML = pagarConta;
+    }
+
+    function pagaConta500(){
+        var granaAtual = Number(span_GranaAtual.innerHTML);
+        var pagarConta = granaAtual - 500;
+        span_GranaAtual.innerHTML = pagarConta;
+    }
+
+    function ganharNaLoteria(){
+        var granaAtual = Number(span_GranaAtual.innerHTML);
+        var pagarConta = granaAtual + 2000;
+        span_GranaAtual.innerHTML = pagarConta;
+    }
+
+</script>

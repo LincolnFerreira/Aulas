@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="moverEsquerda()">Esquerda</button>
+    <button onclick="moverDireita()">Direita</button>
+    <br>
+    <br>
+
+    Quantos pixels?<input id="input_pixels">
+    <br>
+    <br>
+    <br>
+    
+    <img id="img_marginLeft" src="bart.png" style="width: 80px;">
+    <br>
+
+    <span id="input_armazena" style="font-size: 0;"></span>
+    <span id="input_armazenaTotal" style="font-size: 0;"></span>
+</body>
+</html>
+
+<script>
+    function moverEsquerda(){
+        pixels = Number(input_pixels.value);
+        input_armazena.innerHTML = pixels;
+        input_armazenaTotal.innerHTML = Number(input_armazenaTotal.innerHTML) - Number(input_armazena.innerHTML);
+        img_marginLeft.style.marginLeft = Number(input_armazenaTotal.innerHTML) + "px";
+    }
+
+    function moverDireita(){
+        pixels = Number(input_pixels.value);
+        input_armazena.innerHTML = pixels;
+        input_armazenaTotal.innerHTML = Number(input_armazenaTotal.innerHTML) + Number(input_armazena.innerHTML);
+        img_marginLeft.style.marginLeft = Number(input_armazenaTotal.innerHTML) + "px";
+    }
+</script>

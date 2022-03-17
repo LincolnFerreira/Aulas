@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <h1>
+            <span>R$ </span>
+            <b id="b_totalGuardado">0.00</b>
+        </h1>
+        <br>
+
+        <span>Depósitos efetuados: <b id="b_qtdDeposito">0</b></span>
+    </div>
+    <button onclick="depositaMeio()">Deposita 0.50</button>
+    <button onclick="depositaDois()">Deposita 2.00</button>
+</body>
+</html>
+
+<script>
+    function depositaMeio(){
+        var qtdDeposito = Number(b_qtdDeposito.innerHTML) + 1;
+        var totalGuardado = Number(b_totalGuardado.innerHTML);
+        var somaMeio = totalGuardado + 0.50; 
+
+        b_qtdDeposito.innerHTML = qtdDeposito;
+        b_totalGuardado.innerHTML = somaMeio;
+        
+    }
+    function depositaDois(){
+        var qtdDeposito = Number(b_qtdDeposito.innerHTML) + 1;
+        var totalGuardado = Number(b_totalGuardado.innerHTML);
+        var somaDois = totalGuardado + 2.00;
+
+        b_qtdDeposito.innerHTML = qtdDeposito;
+        b_totalGuardado.innerHTML = somaDois;
+
+    }
+</script>
