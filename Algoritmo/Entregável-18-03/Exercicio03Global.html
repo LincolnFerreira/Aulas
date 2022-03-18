@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+        <div id="div_cofrinho"></div>
+        <br>
+    
+    </div>
+    <h3>Depósitos</h3>
+    <button onclick="depositaMeio()">Deposita 0.50</button>
+    <button onclick="depositaDois()">Deposita 2.00</button>
+    <br>
+    <br>
+    <h3>Saques</h3>
+
+    <button onclick="retiraMeio()">Retira 0.50</button>
+    <button onclick="retiraDois()">Retira 2.00</button>
+    <br>
+    <br>
+    <h3>Reiniciar</h3> 
+    <button onclick="limpar()">Limpar</button>
+
+</body>
+</html>
+
+<script>
+    var saldo_atual = 0;
+    var depositos = 0;
+    var saques = 0;
+    function depositaMeio(){
+        saldo_atual += 0.5;
+        depositos = 1;
+        div_cofrinho.innerHTML = 
+        `Total guardado no cofrinho: <b><u> R$ ${saldo_atual} </b></u> <br>
+        <span style='color:green'>Depósitos efetuados : <b><u> ${depositos}</b></u></span> <br>
+        <span style='color: red'>Retiradas efetuadas: <b><u>${saques}</b></u></span> `;
+        
+        }
+    
+    function depositaDois(){
+        saldo_atual += 2;
+        depositos += 1;       
+        div_cofrinho.innerHTML = 
+        `Total guardado no cofrinho: <b><u> R$ ${saldo_atual} </b></u> <br>
+        <span style='color:green'>Depósitos efetuados : <b><u> ${depositos}</b></u></span> <br>
+        <span style='color: red'>Retiradas efetuadas: <b><u>${saques}</b></u></span> `;
+        
+        }
+    
+    function retiraMeio(){
+        saldo_atual -= 0.5;
+        saques += 1;       
+        div_cofrinho.innerHTML = 
+        `Total guardado no cofrinho: <b><u> R$ ${saldo_atual} </b></u> <br>
+        <span style='color:green'>Depósitos efetuados : <b><u> ${depositos}</b></u></span> <br>
+        <span style='color: red'>Retiradas efetuadas: <b><u>${saques}</b></u></span> `;
+        
+        }
+    function retiraDois(){
+        saldo_atual -= 2;
+        saques += 1;       
+        div_cofrinho.innerHTML = 
+        `Total guardado no cofrinho: <b><u> R$ ${saldo_atual} </b></u> <br>
+        <span style='color:green'>Depósitos efetuados : <b><u> ${depositos}</b></u></span> <br>
+        <span style='color: red'>Retiradas efetuadas: <b><u>${saques}</b></u></span> `;
+        
+     }
+     function limpar(){
+        saldo_atual = 0;
+        depositos = 0;
+        saques = 0;
+        div_cofrinho.innerHTML = 
+        `Total guardado no cofrinho: <b><u> R$ ${saldo_atual} </b></u> <br>
+        <span style='color:green'>Depósitos efetuados : <b><u> ${depositos}</b></u></span> <br>
+        <span style='color: red'>Retiradas efetuadas: <b><u>${saques}</b></u></span> `;
+    }     
+</script>

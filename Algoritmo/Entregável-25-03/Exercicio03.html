@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Digite um número qualquer:<input type="text" id="input_numero">
+
+    <button onclick="calcQuadrada()">Exibir sua raiz quadrada</button>
+    <br>
+    <br>
+
+    <button onclick="calcCubica()">Exibir sua raiz quadrada</button>
+    <br>
+    <br>
+    
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+
+    function calcQuadrada(){
+        numero = Number(input_numero.value);
+        var quadrada = numero ** (1/2); 
+        div_resultado.innerHTML = `<b>Raiz quadrada do número ${numero} =  ${quadrada}</b>`
+    };
+
+    function calcCubica(){
+        numero = Number(input_numero.value);
+        var cubica = numero ** (1/3); 
+        div_resultado.innerHTML = `<b>Raiz cubica do número ${numero} =  ${cubica}</b>`
+    };
+</script>

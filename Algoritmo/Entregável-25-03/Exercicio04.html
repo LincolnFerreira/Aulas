@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Digite um número qualquer:<input type="text" id="input_n1">
+    Digite qualquer outro número:<input type="text" id="input_n2">
+
+    <button onclick="calcula()">Calcular raiz</button>
+    <br>
+    <br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function calcula(){
+        var n1 = Number(input_n1.value);
+       var n2 = Number(input_n2.value);
+        resultado = n1;
+        resultado **= n2;  
+        div_resultado.innerHTML = `<span><b>${n1}</b> elevado a <b> ${n2}</b> dá <b>${resultado}</b>`
+    };
+</script>
