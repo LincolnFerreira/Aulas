@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Valor do carro a vista: <input id="input_Avista">
+    <br>
+    <br>
+
+    Taxa de juros a.m. (ao mês): <input id="input_jurosMes">
+    <br>
+    <br>
+
+    Solicite a quantidade de parcelas: <input id="input_qtdParcelas">
+    <br>
+    <br>
+
+    <button onclick="resultado()">Calcular prejú</button>
+
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+    function resultado (){
+        // base 59.000,00
+        var aVista = Number(input_Avista.value);
+        var jurosMes = Number(input_jurosMes.value) / 100;
+        var qtdParcelas = Number(input_qtdParcelas.value);
+        var total;
+        var parcelaJuros = ((1+jurosMes) ** qtdParcelas);
+        var taxaJuros = aVista /(( parcelaJuros - 1) / (parcelaJuros * jurosMes)) ;
+        alert(taxaJuros);
+        div_resultado.innerHTML = `Seu carro vai sair por um total de R$A. Após 1 mês, ele já vai valer só R$B. Porque comprou financiado, vai pagar o correspondente a C carros;`
+    }
+
+</script>

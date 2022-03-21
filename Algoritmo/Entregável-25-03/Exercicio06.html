@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    1° número da progressão:<input type="text" id="input_numero">
+    <br>
+    <br>
+
+    Qual a razão ?<input type="text" id="input_razao">
+    <br>
+    <br>
+
+    Qual o número(termo) da progressão deseja ver ?<input type="text" id="input_termo">
+    <br>
+    <br>
+
+    <button onclick="calcula()">Calcular PG</button>
+    <br>
+    <br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function calcula(){
+
+        //1° Termo
+        var numero = Number(input_numero.value);
+
+        // razão
+        var razao = Number(input_razao.value);
+
+        // Posição do termo já diminuindo -1 que é pedido na formula
+        var termo = Number(input_termo.value);
+            termo --;
+
+        // calcula termo com o expoente da razão
+        var calcTermo = razao;
+            calcTermo **= termo;
+
+        // multiplicação entre 1° termo e razão já calculada o expoente 
+        resultado = numero * calcTermo;
+            div_resultado.innerHTML = `<span>O <b>${termo}°</b> termo nessa PG será <b>${resultado}</b>`
+    };
+</script>
