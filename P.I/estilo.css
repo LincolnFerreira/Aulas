@@ -1,13 +1,41 @@
+body{
+    margin: 0px;
+    font-family: monospace;
+    background-color:black;
 
-        .classe1{
-            color: brown;
-            font-weight: 800;
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-         }
+}
 
-        .classe2{
-            color: blue;
-            font-weight: 800;
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-         }
+.header{
+    color: #32b9cd;
+    border-bottom: 3px solid #32b9cd;
+    
+}
 
+.container{
+    width: 80%;
+    margin: auto;
+
+}
+
+.header .container{
+    display: flex;
+    justify-content: space-between; 
+
+}
+
+.navbar{
+    width: 600px;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-evenly;   
+    align-items: center;
+    color: #E3B062;
+}
+
+.agora{
+    font-weight: 1000;
+    font-size: 15px;
+}
+li:hover{
+    color: #ee9510;
+}

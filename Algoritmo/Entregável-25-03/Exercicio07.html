@@ -36,9 +36,8 @@
         var parcelaJuros = ((1+jurosMes) ** qtdParcelas);
         var taxaJuros = aVista /(( parcelaJuros - 1) / (parcelaJuros * jurosMes)) ;
         var total = taxaJuros * qtdParcelas;
-        
-        alert(total.toFixed(5));
-        div_resultado.innerHTML = `Seu carro vai sair por um total de R$A. Após 1 mês, ele já vai valer só R$B. Porque comprou financiado, vai pagar o correspondente a C carros;`
+        var parcela = taxaJuros;        
+        div_resultado.innerHTML = `Seu carro vai sair por um total de R$${total.toFixed(5)}. Após 1 mês, ele já vai valer só R$B. Porque comprou financiado, vai pagar o correspondente a C carros; <br> valor da parcela = ${parcela.toFixed(5)}`
     }
 
 </script>
