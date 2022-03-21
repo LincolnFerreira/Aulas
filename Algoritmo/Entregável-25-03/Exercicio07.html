@@ -33,10 +33,11 @@
         var aVista = Number(input_Avista.value);
         var jurosMes = Number(input_jurosMes.value) / 100;
         var qtdParcelas = Number(input_qtdParcelas.value);
-        var total;
         var parcelaJuros = ((1+jurosMes) ** qtdParcelas);
         var taxaJuros = aVista /(( parcelaJuros - 1) / (parcelaJuros * jurosMes)) ;
-        alert(taxaJuros);
+        var total = taxaJuros * qtdParcelas;
+        
+        alert(total.toFixed(5));
         div_resultado.innerHTML = `Seu carro vai sair por um total de R$A. Após 1 mês, ele já vai valer só R$B. Porque comprou financiado, vai pagar o correspondente a C carros;`
     }
 
