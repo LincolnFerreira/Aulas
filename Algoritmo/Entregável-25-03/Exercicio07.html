@@ -31,6 +31,20 @@
     function resultado (){
         // base 59.000,00
         var aVista = Number(input_Avista.value);
+        var jurosMes = Number(input_jurosMes.value);
+        var qtdParcelas = Number(input_qtdParcelas.value);
+        var termo1 = aVista / qtdParcelas; 
+        var razao = 1 + (jurosMes / 100);
+        var calcA = (termo1 * (1 - (razao ** qtdParcelas))) / (1- razao); 
+        var calcB = aVista - (aVista * 0.80);      
+  
+        div_resultado.innerHTML = `Seu carro vai sair por um total de R$${calcA}. Após 1 mês, ele já vai valer só R$${calcB}. Porque comprou financiado, vai pagar o correspondente a C carros; <br> valor da parcela = `
+    }
+
+/*
+ function resultado (){
+        // base 59.000,00
+        var aVista = Number(input_Avista.value);
         var jurosMes = Number(input_jurosMes.value) / 100;
         var qtdParcelas = Number(input_qtdParcelas.value);
         var parcelaJuros = ((1+jurosMes) ** qtdParcelas);
@@ -39,5 +53,6 @@
         var parcela = taxaJuros;        
         div_resultado.innerHTML = `Seu carro vai sair por um total de R$${total.toFixed(5)}. Após 1 mês, ele já vai valer só R$B. Porque comprou financiado, vai pagar o correspondente a C carros; <br> valor da parcela = ${parcela.toFixed(5)}`
     }
-
+    */
 </script>
+

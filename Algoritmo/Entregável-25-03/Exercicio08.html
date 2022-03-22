@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="passagens08()">08 passagens</button>
+    <button onclick="passagens20()">20 passagens</button>
+    <button onclick="passagens50()">50 passagens</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    var passagemFixo = 4.40;
+    function passagens08(){
+        var passagem = 8;
+        var valorPassagem = 4.06;
+        var calcTotal = passagem * passagemFixo;
+        var calcDesconto = passagem * valorPassagem; 
+        var calcPorcentagem = 1 - (calcDesconto / calcTotal);
+        calcPorcentagem *=100;  
+        var Bonus = (calcTotal - calcDesconto) / passagemFixo; 
+        div_resultado.innerHTML = `Ao comprar ${passagem} passagens, você pagou R$${calcPorcentagem.toFixed(1)} a menos. É como se tivesse ganhado ${Bonus.toFixed(1)} passagens de bônus`;
+
+    }
+    
+    function passagens20(){
+        var passagem = 20;
+        var valorPassagem = 3.93;
+        var calcTotal = passagem * passagemFixo;
+        var calcDesconto = passagem * valorPassagem; 
+        var calcPorcentagem = 1 - (calcDesconto / calcTotal);
+        calcPorcentagem *=100;  
+        var Bonus = (calcTotal - calcDesconto) / passagemFixo; 
+        div_resultado.innerHTML = `Ao comprar ${passagem} passagens, você pagou R$${calcPorcentagem.toFixed(1)} a menos. É como se tivesse ganhado ${Bonus.toFixed(1)} passagens de bônus`;
+    }
+    
+    function passagens50(){
+        var passagem = 50;
+        var valorPassagem = 3.83;
+        var calcTotal = passagem * passagemFixo;
+        var calcDesconto = passagem * valorPassagem; 
+        var calcPorcentagem = 1 - (calcDesconto / calcTotal);
+        calcPorcentagem *=100;  
+        var Bonus = (calcTotal - calcDesconto) / passagemFixo; 
+        div_resultado.innerHTML = `Ao comprar ${passagem} passagens, você pagou R$${calcPorcentagem.toFixed(1)} a menos. É como se tivesse ganhado ${Bonus.toFixed(1)} passagens de bônus`; 
+    }
+</script>
