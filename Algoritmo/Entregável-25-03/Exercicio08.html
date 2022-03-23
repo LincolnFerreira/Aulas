@@ -24,7 +24,7 @@
         var calcPorcentagem = 1 - (calcDesconto / calcTotal);
         calcPorcentagem *=100;  
         var Bonus = (calcTotal - calcDesconto) / passagemFixo; 
-        div_resultado.innerHTML = `Ao comprar ${passagem} passagens, você pagou R$${calcPorcentagem.toFixed(1)} a menos. É como se tivesse ganhado ${Bonus.toFixed(1)} passagens de bônus`;
+        div_resultado.innerHTML = `Ao comprar ${passagem} passagens, você pagou R$${calcPorcentagem.toFixed(2)}% a menos. É como se tivesse ganhado ${Bonus.toFixed(2)} passagens de bônus`;
 
     }
     
@@ -33,10 +33,10 @@
         var valorPassagem = 3.93;
         var calcTotal = passagem * passagemFixo;
         var calcDesconto = passagem * valorPassagem; 
-        var calcPorcentagem = 1 - (calcDesconto / calcTotal);
-        calcPorcentagem *=100;  
+        var calcPorcentagem = 1 - (passagemFixo / valorPassagem );
+        calcPorcentagem = - (calcPorcentagem * 100);  
         var Bonus = (calcTotal - calcDesconto) / passagemFixo; 
-        div_resultado.innerHTML = `Ao comprar ${passagem} passagens, você pagou R$${calcPorcentagem.toFixed(1)} a menos. É como se tivesse ganhado ${Bonus.toFixed(1)} passagens de bônus`;
+        div_resultado.innerHTML = `Ao comprar ${passagem} passagens, você pagou ${calcPorcentagem.toFixed(2)}% a menos. É como se tivesse ganhado ${Bonus.toFixed(2)} passagens de bônus`;
     }
     
     function passagens50(){
@@ -47,6 +47,6 @@
         var calcPorcentagem = 1 - (calcDesconto / calcTotal);
         calcPorcentagem *=100;  
         var Bonus = (calcTotal - calcDesconto) / passagemFixo; 
-        div_resultado.innerHTML = `Ao comprar ${passagem} passagens, você pagou R$${calcPorcentagem.toFixed(1)} a menos. É como se tivesse ganhado ${Bonus.toFixed(1)} passagens de bônus`; 
+        div_resultado.innerHTML = `Ao comprar ${passagem} passagens, você pagou R$${calcPorcentagem.toFixed(2)}% a menos. É como se tivesse ganhado ${Bonus.toFixed(2)} passagens de bônus`; 
     }
 </script>

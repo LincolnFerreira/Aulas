@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Porção de pão francês: </span><u id="span_pao">0</u>
+    <br>
+    <br>
+
+    <span>Porção de carne boniva: </span><u id="span_carneBovina">0</u>
+    <br>
+    <br>
+
+    <span>Porção de carne de soja: </span><u id="span_carneSoja">0</u>
+    <br>
+    <br>
+
+    <span>Porção de arroz com feijão: </span><u id="span_arrozFeijao">0</u>
+    <br>
+    <br>
+    <b>Total de calorias: </b><u id="u_totalCaloria">0</u>
+    <br>
+    <br>
+    
+    <button onclick="pao()">Comer um pão francês</button>
+    <button onclick="carneBovina()">Comer porção de carne boniva</button>
+    <button onclick="carneSoja()">Comer porção de carne de soja</button>
+    <button onclick="arrozFeijao()">Comer porção de arroz com feijão</button>
+    <button onclick="recomecar()">Recomeçar</button>
+
+</body>
+</html>
+
+<script>
+    var total = 0;
+    var contPao = 0;
+    var contBovina = 0;
+    var contSoja = 0;
+    var contFeijao = 0;
+
+    function pao(){
+        contPao ++;
+        span_pao.innerHTML = contPao;
+        total +=50;
+        u_totalCaloria.innerHTML = total;
+
+    }
+
+    function carneBovina(){
+        contBovina ++;
+        span_carneBovina.innerHTML = contBovina;
+        total +=100;
+        u_totalCaloria.innerHTML = total;
+    }
+
+    function carneSoja(){
+        contSoja ++;
+        span_carneSoja.innerHTML = contSoja;
+        total +=30;
+        u_totalCaloria.innerHTML = total;
+    }
+
+    function arrozFeijao(){
+        contFeijao ++;
+        span_arrozFeijao.innerHTML = contFeijao;
+        total +=120;
+        u_totalCaloria.innerHTML = total;
+    }
+    
+    function recomecar(){
+        contPao = 0;
+        contBovina = 0;
+        contSoja = 0;
+        contFeijao = 0;
+        total = 0;
+
+        span_pao.innerHTML = contPao;
+        span_carneBovina.innerHTML = contBovina;
+        span_carneSoja.innerHTML = contSoja;
+        span_arrozFeijao.innerHTML = contFeijao;
+        u_totalCaloria.innerHTML = total;
+
+    }
+
+</script>

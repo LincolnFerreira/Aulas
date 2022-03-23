@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <span>Valor guardado no cofrinho:R$
+        <span id="div_resultado">0,00</span>
+    </span>
+    <br>
+    <br>
+   
+    Qual valor será depositado : <input id="input_deposito">
+    <br>
+    <br>
+
+    <button onclick="deposita()">Depositar</button>
+    <button onclick="tiraGrana()">Depositar</button>
+    <br>
+    <br>
+
+</body>
+</html>
+<script>
+    var armazena = 0;
+
+    function deposita(){
+        var valorDeposito = Number(input_deposito.value);
+        armazena += valorDeposito;
+
+        div_resultado.innerHTML = armazena;
+    }
+
+    function tiraGrana(){
+        armazena = 0;
+        div_resultado.innerHTML = armazena;
+
+    }
+</script>
+

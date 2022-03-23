@@ -36,9 +36,11 @@
         var termo1 = aVista / qtdParcelas; 
         var razao = 1 + (jurosMes / 100);
         var calcA = (termo1 * (1 - (razao ** qtdParcelas))) / (1- razao); 
-        var calcB = aVista - (aVista * 0.80);      
+        var calcB = aVista - (aVista * 0.80);    
+        var calcC = calcA / aVista;  
+
   
-        div_resultado.innerHTML = `Seu carro vai sair por um total de R$${calcA}. Após 1 mês, ele já vai valer só R$${calcB}. Porque comprou financiado, vai pagar o correspondente a C carros; <br> valor da parcela = `
+        div_resultado.innerHTML = `Seu carro vai sair por um total de ${calcA.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}. Após 1 mês, ele já vai valer só R$${calcB}. Porque comprou financiado, vai pagar o correspondente a ${calcC.toFixed(1)} carros; `
     }
 
 /*
