@@ -7,83 +7,55 @@
     <title>Document</title>
 </head>
 <body>
-    <span>Porção de pão francês: </span><u id="span_pao">0</u>
-    <br>
-    <br>
 
-    <span>Porção de carne boniva: </span><u id="span_carneBovina">0</u>
+    <span>Valor guardado no cofrinho: <b>R$</b>
+        <b id="b_resultado">0,00</b>
+    </span>
     <br>
     <br>
-
-    <span>Porção de carne de soja: </span><u id="span_carneSoja">0</u>
-    <br>
-    <br>
-
-    <span>Porção de arroz com feijão: </span><u id="span_arrozFeijao">0</u>
-    <br>
-    <br>
-    <b>Total de calorias: </b><u id="u_totalCaloria">0</u>
+   
+    <span>Quantidade de depósitos feitos:
+        <b id="b_deposito">0</b>
+    </span>
     <br>
     <br>
     
-    <button onclick="pao()">Comer um pão francês</button>
-    <button onclick="carneBovina()">Comer porção de carne boniva</button>
-    <button onclick="carneSoja()">Comer porção de carne de soja</button>
-    <button onclick="arrozFeijao()">Comer porção de arroz com feijão</button>
-    <button onclick="recomecar()">Recomeçar</button>
+    <span>Quantidade de retiradas feitas:
+        <b id="b_saque">0</b>
+    </span>
+    <br>
+    <br>
+
+    Qual valor será depositado : <input id="input_deposito">
+    <br>
+    <br>
+
+    <button onclick="deposita()">Depositar</button>
+    <button onclick="tiraGrana()">Depositar</button>
+    <br>
+    <br>
 
 </body>
 </html>
-
 <script>
-    var total = 0;
-    var contPao = 0;
-    var contBovina = 0;
-    var contSoja = 0;
-    var contFeijao = 0;
-
-    function pao(){
-        contPao ++;
-        span_pao.innerHTML = contPao;
-        total +=50;
-        u_totalCaloria.innerHTML = total;
-
-    }
-
-    function carneBovina(){
-        contBovina ++;
-        span_carneBovina.innerHTML = contBovina;
-        total +=100;
-        u_totalCaloria.innerHTML = total;
-    }
-
-    function carneSoja(){
-        contSoja ++;
-        span_carneSoja.innerHTML = contSoja;
-        total +=30;
-        u_totalCaloria.innerHTML = total;
-    }
-
-    function arrozFeijao(){
-        contFeijao ++;
-        span_arrozFeijao.innerHTML = contFeijao;
-        total +=120;
-        u_totalCaloria.innerHTML = total;
-    }
+    var armazena = 0;
+    var deposito = 0;
+    var saque = 0;
     
-    function recomecar(){
-        contPao = 0;
-        contBovina = 0;
-        contSoja = 0;
-        contFeijao = 0;
-        total = 0;
-
-        span_pao.innerHTML = contPao;
-        span_carneBovina.innerHTML = contBovina;
-        span_carneSoja.innerHTML = contSoja;
-        span_arrozFeijao.innerHTML = contFeijao;
-        u_totalCaloria.innerHTML = total;
-
+    function deposita(){
+        var valorDeposito = Number(input_deposito.value);
+        
+        armazena += valorDeposito;
+        deposito ++;
+        b_resultado.innerHTML = armazena.toFixed(1).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});;
+        b_deposito.innerHTML = deposito;
     }
 
+    function tiraGrana(){
+        armazena = 0;
+        saque ++;   
+        b_resultado.innerHTML = armazena;
+        b_saque.innerHTML = saque;
+    }
 </script>
+

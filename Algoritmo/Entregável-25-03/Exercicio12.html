@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div style="float: left; width: 200px;">
+
+        <div id="div_scorpion"></div>
+        <div id="div_barraScorpion"></div>
+        <div id="div_golpe"></div>
+    
+    </div>
+    
+    <div style=" margin-left: 20%; width: 200px;">
+
+        <div id="div_sub"></div>
+        <div id="div_barraSub" ></div>
+        <div id="div_golpe2"></div>
+
+    </div>
+    <br>
+    <br>
+    <br> 
+
+    <button onclick="play()">Iniciar Jogo</button>
+
+</body>
+</html>
+
+<script>
+    var barraSub = 100;
+    var barraScorpion =100;
+    var golpeSub = 0;
+    var golpeScorpion = 0;
+
+    function play (){
+        div_scorpion.innerHTML = ` <button onclick="bntScorpion"> <img src='scorpion.png' style="width:100%"> </button>`;
+        div_barraScorpion.style.backgroundColor = 'green';
+        
+        //BARRA DE VIDA
+        div_barraScorpion.style.width = `${barraScorpion}%`;
+        div_barraScorpion.style.height = `20px`;
+        div_golpe.innerHTML = `Golpes sofridos pelo lutador 1: <b>${golpeScorpion}</b>`
+// ------------------------------------------------------------------------------------------------
+        
+        div_sub.innerHTML = `<button> <img src='subzero.png' style="width:100%; height:200px"> </button> `;
+        div_barraSub.style.backgroundColor = 'red';
+        
+        //BARRA DE VIDA
+        div_barraSub.style.width = `${barraSub}%`;
+        div_barraSub.style.height = `20px`;
+        div_golpe2.innerHTML = `Golpes sofridos pelo lutador 2: <b>${golpeSub}</b>`
+
+    }
+
+    function bntScorpion() {
+        barraSub = barraSub - 5;
+
+        div_barraScorpion.style.width = `${barraScorpion}%`;
+        div_barraSub.style.width = `${barraSub}%`;
+
+    }
+
+</script>
