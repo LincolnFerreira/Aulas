@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual o valor da pizza?<input id="input_valorPizza">
+    <br>
+    <br>
+    
+    Quantidade de amigos reunidos? <input id="input_qtdAmigo">
+    <br>
+    <br>
+
+    <button onclick="resultado()">Rola a pizza ?</button>
+    <br>
+    <br>
+    
+    <span id="span_resultado"></span>
+
+</body>
+</html>
+
+<script>
+    function resultado(){
+      var valorPizza = Number(input_valorPizza.value);
+      var qtdAmigo = Number(input_qtdAmigo.value);
+
+      var valorPorAmigo = valorPizza / qtdAmigo;
+
+      span_resultado.innerHTML = `Cada amigo vai pagar R$${valorPorAmigo} pela pizza`; 
+
+      if(valorPorAmigo > 20){
+        
+        span_resultado.innerHTML += `, deu ruim! Pizza muito cara!`; 
+
+      }
+    }
+
+
+</script>

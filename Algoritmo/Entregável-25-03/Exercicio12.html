@@ -39,7 +39,7 @@
     var golpeScorpion = 0;
 
     function play (){
-        div_scorpion.innerHTML = ` <button onclick="bntScorpion"> <img src='scorpion.png' style="width:100%"> </button>`;
+        div_scorpion.innerHTML = ` <button onclick="bntScorpion()" style="border:none;color:transparent; backgroundcolor:transparent"> <img src='scorpion.png' style="width:100%"> </button>`;
         div_barraScorpion.style.backgroundColor = 'green';
         
         //BARRA DE VIDA
@@ -48,7 +48,7 @@
         div_golpe.innerHTML = `Golpes sofridos pelo lutador 1: <b>${golpeScorpion}</b>`
 // ------------------------------------------------------------------------------------------------
         
-        div_sub.innerHTML = `<button> <img src='subzero.png' style="width:100%; height:200px"> </button> `;
+        div_sub.innerHTML = `<button onclick="bntSub()"> <img src='subzero.png' style="width:100%; height:200px"> </button> `;
         div_barraSub.style.backgroundColor = 'red';
         
         //BARRA DE VIDA
@@ -60,9 +60,31 @@
 
     function bntScorpion() {
         barraSub = barraSub - 5;
-
+        golpeSub ++;
+        div_golpe2.innerHTML = `Golpes sofridos pelo lutador 2: <b>${golpeSub}</b>`
+        
         div_barraScorpion.style.width = `${barraScorpion}%`;
         div_barraSub.style.width = `${barraSub}%`;
+        
+        
+        if(barraSub <= 0 ){
+            alert(`Scorpion perdeu!!!`);
+        }
+    }
+    
+    function bntSub() {
+        barraScorpion = barraScorpion - 5;
+        golpeScorpion ++;
+        div_golpe.innerHTML = `Golpes sofridos pelo lutador 1: <b>${golpeScorpion}</b>`
+
+        div_barraSub.style.width = `${barraSub}%`;
+        div_barraScorpion.style.width = `${barraScorpion}%`;
+
+
+        if(barraScorpion <= 0 ){
+            alert(`SubZero perdeu!!!`);
+
+        }
 
     }
 

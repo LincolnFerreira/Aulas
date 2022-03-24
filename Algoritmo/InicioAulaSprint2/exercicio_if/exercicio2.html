@@ -19,13 +19,15 @@
 <script>
     function calc(){
         var valorCarro = Number(input_valor.value);
-        var infracoes = Number(input_infracoes);
+        var infracoes = Number(input_infracoes.value);
         var calculo = valorCarro * 0.015;
-        if(infracoes <= 3){
-            calculo = valorCarro * 0.9
-            div_resultado.innerHTML = calculo; 
-        }
-        div_resultado.innerHTML = calculo; 
 
+        if(infracoes > 3) {
+            calculo = valorCarro * 0.9;
+        };
+        alert(calculo);
+        
+
+        
     }
 </script>
