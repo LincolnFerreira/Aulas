@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       Saldo da conta:<input type="text" id="input_saldo_conta">
+       <br>
+       <br>
+       Valor do débito:<input type="text" id="input_debito_conta">
+       <br>
+       <br>
+       <button onclick="resultado()">Analisar conta</button>
+       <br>
+       <br>
+       <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    
+    function resultado(){
+        var saldo = Number(input_saldo_conta.value);
+        var debito = Number(input_debito_conta.value);
+        
+        saldo -= debito ;
+        saldo = saldo;
+        
+            if(saldo < 0){
+                div_resultado.innerHTML = `<b>O saldo atual da conta corrente é <b style="color:red">${saldo.toFixed(2)}<b>`;
+        } else { 
+                div_resultado.innerHTML = `<b>O saldo atual da conta corrente é <i style="color:blue; font-weight:bold">${saldo.toFixed(2)}<i>`;
+            }
+
+    }
+
+</script>

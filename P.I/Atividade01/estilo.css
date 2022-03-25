@@ -1,0 +1,33 @@
+
+    #pai{
+        background-color: #f0b039;
+        width: 500px;
+        height: 500px;
+    }
+
+    #filho{
+        background-color: #8fe98f;
+        width: 50%;
+        height: 50%;
+    }
+
+    #filhoDoFilho{
+        background-color: #ff0000;
+        color: #ffffff;
+        font-size: 25px;
+        font-family: monospace;
+        font-weight: bold;
+    }
+    #mae{
+        background-color: #f0b039;
+        width: 50%;
+        height: 50vh;
+        background-color: #5ec8f1;
+    }
+    #filha{
+        background-color: #ff0000;
+        width: 75vw;
+        height: 50%;
+
+    }
+

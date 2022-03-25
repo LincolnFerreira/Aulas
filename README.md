@@ -17,3 +17,9 @@ Tipos de atributos:
 • Atributos multivalorados: podem assumir diversos valores. Como por exemplo, o atributo Telefone de um funcionário, que pode assumir diversos valores.
 
 • Atributos Derivados: Em alguns casos, dois ou mais atributos estão relacionados, por exemplo, a idade e data de nascimento de um funcionário. Para um determinado funcionário, podemos determinar a sua idade por meio da data de nascimento e da data atual. Atributos como a idade são chamados de atributos derivados.
+
+
+
+
+css animação:
+https://codepen.io/cdrs/pen/pGgmPw

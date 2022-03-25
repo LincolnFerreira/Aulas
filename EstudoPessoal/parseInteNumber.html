@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        Digite um número com letra:<input id="input_numeroLetra" placeholder="12.2abc">
+        <span style="color: rgba(128, 128, 128, 0.699);">Para ver todas as funções funcionarem, utilize algo como <b>12.2abc</b></span>
+        <br>
+        <br>
+    
+        <button onclick="diferenca()">Diferença</button>
+        <br>
+        <br>
+    
+        <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function diferenca(){
+        var tipoNumber = Number(input_numeroLetra.value);
+        var tipoParse = parseInt(input_numeroLetra.value);
+        var tipoParseFloat = parseFloat(input_numeroLetra.value);
+
+        div_resultado.innerHTML = `usando o tipo Number() aqui: ${tipoNumber}<br>
+        usando o tipo ParseInt() aqui: ${tipoParse}<br>
+        usando o tipo ParseFloat() aqui: ${tipoParseFloat}<br>`;
+
+        setTimeout("alert('')");
+    }
+</script>
