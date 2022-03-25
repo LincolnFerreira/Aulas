@@ -21,6 +21,8 @@
     <br>
 
     <button onclick="resultado()">Calcular prejú</button>
+    <br>
+    <br>
 
     <div id="div_resultado"></div>
 
@@ -40,7 +42,7 @@
         var calcC = calcA / aVista;  
 
   
-        div_resultado.innerHTML = `Seu carro vai sair por um total de ${calcA.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}. Após 1 mês, ele já vai valer só R$${calcB}. Porque comprou financiado, vai pagar o correspondente a ${calcC.toFixed(1)} carros; `
+        div_resultado.innerHTML = `Seu carro vai sair por um total de ${calcA.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}. Após 1 mês, ele já vai valer só R$${calcB}. Porque comprou financiado, vai pagar o correspondente a ${calcC.toFixed(1)} carros; `;
     }
 
 /*

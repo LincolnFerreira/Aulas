@@ -16,13 +16,16 @@
     <br>
     <br>    
 
-    <button onclick="calcula()"></button>
+    <button onclick="calcula()">Calcula IMC</button>
     <br>
     <br>
+
     <div id="div_resultado"></div>
+
 </body>
 </html>
 <script>
+
     function calcula(){
         var peso = Number(input_peso.value);
         var alturaAlt = Number(input_altura.value);
@@ -30,6 +33,7 @@
 
         var imc = peso / alturaAlt;
 
-        div_resultado.innerHTML = `Seu IMC (Indice de Massa Corpórea) é de : ${imc};`
+        div_resultado.innerHTML = `Seu IMC (Indice de Massa Corpórea) é de : ${imc.toFixed(2)}`;
     };
+
 </script>
