@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Qual a temperatura do Ambiente ? <input type="text" id="input_temperatura">
+    <br>
+    <br>
+    <button onclick="verificaClima()">Verifica Clima</button>
+    <br>
+    <br>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<style>
+    .class_img{
+        width: 400px;
+        height: 400px;
+    }
+</style>
+
+<script>
+    function verificaClima(){
+        var temperatura = Number(input_temperatura.value);
+        
+        if(temperatura >= 10){
+            div_resultado.innerHTML= `Inapropriada p/ conservar alimento.<br>
+            <img class="class_img" src='img/malestado.jpg'>`;
+        }
+         else {
+                div_resultado.innerHTML= `Apropriada p/ conservar alimento. <br>
+                <img class="class_img" src='img/bomestado.jpg'>`;
+            }
+    }
+
+</script>

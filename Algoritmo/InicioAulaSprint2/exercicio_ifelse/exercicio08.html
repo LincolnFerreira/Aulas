@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Quantas partidas um atacante jogou ? <input type="text" id="input_qtd_atacante">
+    <br>
+    <br>
+    Quantos gols ele marcou ? <input type="text" id="input_qtd_gol">
+    <br>
+    <br>
+    <button onclick="estudarAtacante()">Estudar Atacante</button>
+    <br>
+    <br>
+    <div id="div_resultado" style="font-size: 30px;"></div>
+</body>
+</html>
+
+<script>
+    function estudarAtacante(){
+        var qtdAtacante = Number(input_qtd_atacante.value);
+        var qtdGol = Number(input_qtd_gol.value);
+        var media = qtdGol/qtdAtacante;
+        if(media < 0.2){
+            div_resultado.innerHTML = `Melhor mudar de posição <br>
+            <img src="img/jogador-ruim.jpg" style="width:400px"><br><br>
+            Sua média de gols/partida é de ${media.toFixed(1)}`;
+        } else{
+
+        if (media <= 0.6){
+            div_resultado.innerHTML = `Atacante mediano <br>
+            <img src="img/jogador-mediano.jpg" style="width:400px"><br><br>
+            Sua média de gols/partida é de ${media.toFixed(1)}`;
+        } else{
+            div_resultado.innerHTML = `Atacante de futuro <br>
+            <img src="img/jogador-bom.jpg" style="width:400px"><br><br>
+            Sua média de gols/partida é de ${media.toFixed(1)}`;
+        };
+    }
+
+    }
+
+</script>

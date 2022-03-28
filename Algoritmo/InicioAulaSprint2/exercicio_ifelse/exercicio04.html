@@ -37,7 +37,8 @@
         
       span_resultado.innerHTML = `Cada amigo vai pagar R$${valorPorAmigo} pela pizza, Uhu! Vamos pedir a pizza!`; 
         
-      }else {
+      }
+      if (valorPorAmigo >= valorIndidualMaximo) {
         span_resultado.innerHTML += `Cada amigo vai pagar R$${valorPorAmigo} pela pizza, deu ruim! Pizza muito cara!`; 
         
       }

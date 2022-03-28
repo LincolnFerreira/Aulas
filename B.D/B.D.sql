@@ -2,6 +2,8 @@ create database sprint1;
 
 use sprint1;
 
+
+
 create table Professor (
     idProfessor int primary key auto_increment,
     nome varchar (50),
@@ -10,6 +12,7 @@ create table Professor (
     especialidade2 varchar(40)
 
 );
+
 
 insert into Professor (nome,sobrenome,especialidade1,especialidade2) values
  ('Caio','Silvia','Algoritmo','Javascript'),
@@ -27,15 +30,19 @@ create table Disciplina (
 insert into Disciplina (nomeDisc) values 
 ('Informática Geral'),
 ('Pesquisa e Inovação'),
-('SocioEmocional');
+('SocioEmocional'),
+('Arq comp'),
+('Algoritmos'),
+('Banco de Dados');
+
+desc Professor;
 
 alter table Disciplina add column  fkProfessor int, add foreign key (fkProfessor) references Professor(idProfessor);
 
-update Disciplina set fkProfessor = 1 where idProfessor <= 4;
+select * from Disciplina;
+select * from Professor;
 
-update Disciplina set fkProfessor = 3 where idProfessor in (5);
-
-update Disciplina set fkProfessor = 2 where idProfessor in (6); 
+update Disciplina set fkProfessor = 2 where  idDisc = 6 ;
 
 select Disciplina.*, Professor.nomeDisc from Disciplina join Disciplina on idDisc = fkProfessor;
-
+	

@@ -1,0 +1,22 @@
+#div_a{
+    background-color: rgb(200, 162, 200);
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+}
+
+#div_b{
+    background-color: #f068b0;
+    width: 250px;
+    height: 100%;
+    border:double rgb(243, 0, 0) 20px;
+}
+
+#div_c{
+    background-color: #7fffd4;
+    width: 30%;
+    height: 88%;
+}
+
+

@@ -1,0 +1,91 @@
+.div_A{
+    background-color: rgb(158, 96, 96);
+    border: solid black 15px;
+    width: 70vw;
+    height: 32vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 0.8%;
+    margin-left: 0.3%;
+}
+
+.div_B{
+    background-color: #fff;
+    margin-top: 40px;
+    width: 82%;
+    height: 60%;
+    border: solid rgb(1, 1, 100) 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.span_paragrafo{
+    color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+
+}
+
+.div_C{
+    width: 100%;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div_barra_azul{
+    background-color: blue;
+    width: 70%;
+    height: 45px;
+}
+
+.div_barra_roxo{
+    background-color: purple;
+    width: 40%;
+    height: 45px;
+}
+
+.div_barra_verde{
+    background-color: green;
+    width: 60%;
+    height: 45px;
+}
+
+.div_barra_amarelo{
+    background-color: yellow;
+    width: 50%;
+    height: 45px;
+}
+.div_D{
+    width: 100%;
+    margin-top: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.div_barra_vermelha{
+    background-color: red;
+    width: 40%;
+    height: 40px;
+
+}
+.div_barra_azul-marinho{
+    background-color: rgb(55, 139, 160);
+    width: 20%;
+    height: 40px;
+    
+}
+.div_barra_vermelha-forte{
+    background-color: rgb(9, 255, 0);
+    width: 40%;
+    height: 40px;
+    
+}
