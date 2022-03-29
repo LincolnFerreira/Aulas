@@ -13,7 +13,6 @@ create table Professor (
 
 );
 
-
 insert into Professor (nome,sobrenome,especialidade1,especialidade2) values
  ('Caio','Silvia','Algoritmo','Javascript'),
  ('Vivian','Dado','Banco de Dados','Modelagem de banco'),
@@ -44,5 +43,9 @@ select * from Professor;
 
 update Disciplina set fkProfessor = 2 where  idDisc = 6 ;
 
-select Disciplina.*, Professor.nomeDisc from Disciplina join Disciplina on idDisc = fkProfessor;
+select * from Professor join Disciplina on idProfessor = fkProfessor;
+
+select Disciplina.*, Professor.nome from Professor join Disciplina on idProfessor = fkProfessor;
 	
+select Professor.nome, Disciplina.* from Professor join Disciplina on idProfessor = fkProfessor where Professor.sobrenome = "Dado";
+
