@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Qual sua altura ?
+    <input type="text" id="input_altura" /> <br /><br />
+    <button onclick="qualEsporte()">Quais esportes</button>
+    <br /><br />
+    <div id="div_resultado" style="font-size: 30px"></div>
+  </body>
+</html>
+<script>
+  function qualEsporte() {
+    var altura = Number(input_altura.value);
+    if (altura <= 165) {
+      div_resultado.innerHTML = `Você pode ser piloto de corrida`;
+      div_resultado.style.color = "blue";
+    } else if (altura < 180) {
+      div_resultado.innerHTML = `Você pode ser jogador de futebol`;
+      div_resultado.style.color = "green";
+    } else {
+      div_resultado.innerHTML = `Você pode ser jogador de vôlei ou basquete`;
+      div_resultado.style.color = "orange";
+    }
+  }
+</script>

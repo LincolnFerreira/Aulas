@@ -30,16 +30,14 @@
       div_resultado.innerHTML = `Melhor mudar de posição <br>
             <img src="img/jogador-ruim.jpg" style="width:400px"><br><br>
             Sua média de gols/partida é de ${media.toFixed(1)}`;
-    } else {
-      if (media <= 0.6) {
-        div_resultado.innerHTML = `Atacante mediano <br>
+    } else if (media <= 0.6) {
+      div_resultado.innerHTML = `Atacante mediano <br>
             <img src="img/jogador-mediano.jpg" style="width:400px"><br><br>
             Sua média de gols/partida é de ${media.toFixed(1)}`;
-      } else {
-        div_resultado.innerHTML = `Atacante de futuro <br>
+    } else {
+      div_resultado.innerHTML = `Atacante de futuro <br>
             <img src="img/jogador-bom.jpg" style="width:400px"><br><br>
             Sua média de gols/partida é de ${media.toFixed(1)}`;
-      }
     }
   }
 </script>
