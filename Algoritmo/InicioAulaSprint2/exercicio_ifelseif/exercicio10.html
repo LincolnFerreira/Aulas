@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="validaNota()">Nota 1</button>
+    <br />
+    <button onclick="validaNota2()">Nota 2</button>
+    <br />
+    <button onclick="validaNota3()">Nota 3</button>
+    <br />
+    <button onclick="validaNota4()">Nota 4</button>
+    <br />
+    <button onclick="validaNota5()">Nota 5</button>
+    <br /><br />
+    <span>Sua avaliação:<b id="b_media">0</b></span>
+  </body>
+</html>
+
+<script>
+  var avaliacao = 0;
+  var click = 0;
+  function validaNota() {
+    click++;
+    avaliacao++;
+    b_media.innerHTML = `${avaliacao / click}`;
+  }
+  function validaNota2() {
+    click++;
+    avaliacao += 2;
+    b_media.innerHTML = `${avaliacao / click}`;
+  }
+  function validaNota3() {
+    click++;
+    avaliacao += 3;
+    b_media.innerHTML = `${avaliacao / click}`;
+  }
+  function validaNota4() {
+    click++;
+    avaliacao += 4;
+    b_media.innerHTML = `${avaliacao / click}`;
+  }
+  function validaNota5() {
+    click++;
+    avaliacao += 5;
+    b_media.innerHTML = `${avaliacao / click}`;
+  }
+</script>
