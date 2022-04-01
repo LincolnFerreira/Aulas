@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body id="body_image">
+        <div class="div_image" id="div_image">
+                <div class="container">
+                        
+                        <select name="estacao" id="id_estacao">
+                                <option value="janeiro">janeiro</option>
+                                <option value="fevereiro">Fevereiro</option>
+                                <option value="marco">Março</option>
+                                <option value="abril">Abril</option>
+                                <option value="maio">Maio</option>
+                                <option value="junho">Junho</option>
+                                <option value="julho">Julho</option>
+                                <option value="agosto">Agosto</option>
+                                <option value="setembro">Setembro</option>
+                                <option value="outubro">Outubro</option>
+                                <option value="novembro">Novembro</option>
+                                <option value="dezembro">Dezembro</option>
+                        </select>
+                        <button onclick="verificaEstacao()" class="btn">Verificar estação</button>
+                </div>
+        </div>
+        </div>
+</body>
+
+</html>
+
+<script>
+        function verificaEstacao() {
+
+                if (id_estacao.value == 'janeiro') {
+                        // div_resultado.innerHTML = "<img src='inverno.jpg'>";
+                        inverno();
+                } else if (id_estacao.value == 'fevereiro') {
+                        // div_resultado.innerHTML = "<img src='inverno.jpg'>";
+                        inverno();
+                } else if (id_estacao.value == 'marco') {
+                        // div_resultado.innerHTML = "<img src='inverno.jpg'>";
+                        primavera();
+                } else if (id_estacao.value == 'abril') {
+                        // div_resultado.innerHTML = "<img src='inverno.jpg'>";
+                        primavera();
+                } else if (id_estacao.value == 'maio') {
+                        // div_resultado.innerHTML = "<img src='inverno.jpg'>";
+                        primavera();
+                } else if (id_estacao.value == 'junho') {
+                        // div_resultado.innerHTML = "<img src='verao.jpg'>";
+                        verao();
+                } else if (id_estacao.value == 'julho') {
+                        // div_resultado.innerHTML = "<img src='verao.jpg'>";
+                        verao();
+                } else if (id_estacao.value == 'agosto') {
+                        // div_resultado.innerHTML = "<img src='verao.jpg'>";
+                        verao();
+                } else if (id_estacao.value == 'setembro') {
+                        // div_resultado.innerHTML = "<img src='outono.jpg'>";
+                        outono();
+                } else if (id_estacao.value == 'outubro') {
+                        // div_resultado.innerHTML = "<img src='outono.jpg'>";
+                        outono();
+                } else if (id_estacao.value == 'novembro') {
+                        // div_resultado.innerHTML = "<img src='outono.jpg'>";
+                        outono();
+                } else {
+                        // div_resultado.innerHTML = "<img src='inverno.jpg'>";
+                        inverno();
+                }
+        }
+        function inverno() {
+                var primavera = body_image.style.backgroundImage = "url(invernowall.png)";
+                div_image.style.backgroundImage = "url(neve.gif.crdownload)";
+        }
+        function primavera() {
+                var primavera = body_image.style.backgroundImage = "url(invernowall.png)";
+                div_image.style.backgroundImage = "url(neve.gif.crdownload)";
+        }
+        function verao() {
+                var primavera = body_image.style.backgroundImage = "url(invernowall.png)";
+                div_image.style.backgroundImage = "url(neve.gif.crdownload)";
+        }
+        function outono() {
+                var primavera = body_image.style.backgroundImage = "url(outono.jpg)";
+                div_image.style.backgroundImage = "url(outono.gif)";
+        }
+
+
+</script>
