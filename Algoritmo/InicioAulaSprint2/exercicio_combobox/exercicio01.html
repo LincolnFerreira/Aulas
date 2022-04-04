@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Qual bebida irá consumir ?
+    <select name="bebida" id="id_bebida">
+        <option value="nenhuma">Nenhuma</option>
+        <option value="agua">Água</option>
+        <option value="refrigerante">Refrigerante</option>
+        <option value="cerveja">Cerveja</option>
+    </select>
+    <br><br>
+    Qual refeição irá consumir ?
+    <select name="refeicao" id="id_refeicao">
+        <option value="salada">Salada</option>
+        <option value="feijoada">Feijoada</option>
+        <option value="bife_cavalo">Bife a Cavalo</option>
+        <option value="peixe_frito">Peixe frito</option>
+    </select>
+    Qual o seu nome? <input type="text" id="input_nome">
+    <button onclick="calcular_total()">Calcular total</button>
+</body>
+
+</html>
+
+<script>
+    var bebida = 0;
+    var refeicao = 0;
+    var nomeBebida = '';
+    var nomeRefeicao = '';
+
+
+    function calcular_total(){
+        var descBebida = id_bebida.value;
+        var descRefeicao = id_refeicao.value;
+        descobreBebida();
+        descobreRefeicao();
+        var total = bebida + refeicao;
+        alert(`${input_nome.value} você está comendo ${nomeRefeicao}= ${refeicao} e ${nomeBebida}= ${bebida} então o total é = ${total}`);
+    }
+
+    function descobreBebida() {
+        var descBebida = id_bebida.value;
+
+        if (descBebida == 'nenhuma'){
+            nomeBebida = descBebida;
+            bebida = 0;
+        } else if(descBebida == 'agua'){
+            nomeBebida = descBebida;
+            bebida = 3.50;
+        } else if(descBebida == 'refrigerante'){  
+            nomeBebida = descBebida;
+            bebida = 6.50;
+        } else {
+            nomeBebida = descBebida;
+            bebida = 8.50
+        }
+    }
+    function descobreRefeicao(){
+        var descRefeicao = id_refeicao.value;
+
+        if(descRefeicao == 'salada'){
+            nomeRefeicao = descRefeicao;
+            refeicao = 4.50;
+        } else if(descRefeicao == 'feijoada'){
+            nomeRefeicao = descRefeicao;
+            refeicao = 17.50;
+        } else if(descRefeicao == 'bife_cavalo'){
+            nomeRefeicao = descRefeicao;
+            refeicao = 18.50;
+        } else{
+            nomeRefeicao = descRefeicao;
+            refeicao = 17.00;
+        }
+    }
+</script>

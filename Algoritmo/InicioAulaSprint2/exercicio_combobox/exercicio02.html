@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="time" id="time">
+        <option value="palmeiras">Palmeiras</option>
+        <option value="corinthians">Corinthians</option>
+        <option value="santo">Santos</option>
+        <option value="sao_paulo">São Paulo</option>
+    </select>
+    <br>
+    <div id="div_resultado"><img src="" id="id_img"></div>
+    <br>
+    <button onclick="verEscudo()">Ver escudo</button>
+</body>
+</html>
+
+<script>
+    function verEscudo(){
+        var descTime = time.value;
+        if(descTime == "palmeiras"){
+            // div_resultado.innerHTML = `<img src="palmeira.webp">`;
+            id_img.src="palmeira.webp"; 
+        } else if(descTime == "corinthians"){
+            div_resultado.innerHTML = `<img src="Corinthians.webp">`;
+        } else if(descTime == "santo"){
+            div_resultado.innerHTML = `<img src="santos.png">`;
+        } else if(descTime == "sao_paulo"){
+            div_resultado.innerHTML = `<img>`;
+        }
+    }
+</script>
