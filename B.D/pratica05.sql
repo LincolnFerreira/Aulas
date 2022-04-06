@@ -1,5 +1,5 @@
 create database pet;
-
+desc Pet;
 use pet;
 
 create table Pet(
@@ -17,7 +17,7 @@ celular char(12),
 endereco varchar(50)
 );
 -- TREINAR ESSE CÓDIGO BASTANTE
-alter table Cliente add fkPet int, add foreign key (fkPet) references Pet(idPet);
+alter table Pet add fkCliente int, add foreign key (fkCliente) references Cliente(idCliente);
 
 INSERT INTO Pet(tipoDeAnimal,nome,dtNasc) values
 	('Raposa','9caudas','2000-06-19'),
@@ -39,10 +39,192 @@ INSERT INTO Cliente (nome,sobrenome,telefone,celular,endereco) values
     ('Fábio','Leandro Castro','25231124','9123187480','Rua Albasaoz');
     
     select * from cliente;
-    update Cliente set fkPet = 500 where idCliente = 2;
-    select * from pet;
+    update Pet set fkCliente = 1 where idPet = 101;
+    update Pet set fkCliente = 2 where idPet = 102;
+    update Pet set fkCliente = 3 where idPet = 103;
+    update Pet set fkCliente = 4 where idPet = 104;
+    update Pet set fkCliente = 5 where idPet = 105;
+	update Pet set fkCliente = 2 where idPet = 106;
+	update Pet set fkCliente = 3 where idPet = 107;
+
     
-    
+select * from pet;
+select * from cliente;
+
+DROP database pet;
+
+alter table Cliente modify nome varchar(60);
+
+desc Pet;
+
+select * from Pet where tipoDeAnimal = 'cachorro';
+
+select nome, dtNasc from Pet;
+
+select * from Cliente order by endereco;
+
+select * from Pet where nome like 'c%';
+
+select * from Cliente where sobrenome = "Leandro Castro";
+
+update Cliente set telefone = '11111111' where idCliente = 3;
+
+select * from Cliente;
+
+select Pet.nome,Pet.tipodeAnimal,Cliente.nome from Pet join Cliente on fkCliente = idCliente;
+
+select * from Pet join Cliente on fkCliente = idCliente where idCliente = '2';
+
+delete from Pet where idPet = 101;
+
+select * from Pet;
+
+-- drop table Pet;
+-- drop table Cliente;
 
 
+
+create database armazenaGastos;
+
+use armazenaGastos;
+
+create table Pessoa (
+	idPessoa int primary key auto_increment,
+	nome varchar(45),
+    dtNasc date,
+    profissao varchar (55)
+);
+
+create table Gasto (
+	idGasto int primary key auto_increment,
+    data datetime,
+    valor decimal(7,2),
+    descricao varchar(55)
+);
+
+insert into Pessoa (nome, dtNasc, profissao) values 
+	('Loridete','1957-07-02','Dona do Lar'),
+	('Ana Célia','1984-07-02','Professora'),
+	('Adilson','1974-07-30','Autonomo'),
+	('Lincoln','2000-06-19','Desempregado');
+
+
+insert into Gasto (data,valor,descricao) values
+('2022-04-03','11.89','Uber'),
+('2022-04-02','100.00','Calça'),
+('2022-04-02','10.31','Uber'),
+('2022-04-05','9.91','Uber'),
+('2022-03-29','93.87','Livro Trono de vidro v.4 e v5'),
+('2022-03-01','13.00','Uber'),
+('2022-03-05','200.00','Compra'),
+('2022-04-03','300.89','Compra'),
+('2022-04-09','50.00','Compra'),
+('2022-04-15','70.31','Compra'),
+('2022-04-16','35.91','Compra'),
+('2022-03-25','100.87','Compra'),
+('2022-03-27','200.00','Compra'),
+('2022-04-04','100.00','Compra');
+
+select * from Gasto;
+select * from Pessoa;
+
+select * from Gasto where valor > 10.00;
+
+select * from Pessoa where dtNasc > 1980-05-01;
+
+alter table Gasto add fkPessoa int, add foreign key (fkPessoa) references Pessoa(idPessoa); 
+
+update Gasto set fkPessoa = 4 where idGasto <= 6;
+update Gasto set fkPessoa = 1 where idGasto > 10;
+update Gasto set fkPessoa = 2 where idGasto in (7,8); 
+update Gasto set fkPessoa = 3 where idGasto in (9,10); 
+
+desc Gasto;
+
+
+select * from Pessoa join Gasto on fkPessoa = idPessoa;
+select Pessoa.nome,Pessoa.profissao, Gasto.valor, Gasto.descricao from Pessoa join Gasto on fkPessoa = idPessoa where nome='Lincoln';
+
+update Gasto set valor = 25.00 where idGasto = 6;
+
+select * from Gasto;
+
+delete from Gasto where idGasto = 6;
+
+
+
+create database PraticaFuncionario;
+
+use PraticaFuncionario;
+create table setor(
+	idSetor int primary key auto_increment,
+    nome varchar(45),
+    andar int
+);
+insert into setor(nome,andar) values
+('Gestor','1'),
+('Adm','2'),
+('Gerente de Vendas','3');
+
+
+create table funcionario(
+	idFunc int primary key auto_increment,
+    nome varchar(45),
+    telefone char (12),
+    salario decimal(7,2) check (salario > 0)
+
+);
+
+
+insert into funcionario(nome,telefone,salario) values
+	('Lincoln','11972377400','10000.00'),
+    ('Gabriel','1195234007','5000.00'),
+    ('Cecilia','119244400','5500.00'),
+    ('Ana','1299574006','4700.00'),
+    ('Joao','1299580004','3700.00'),
+    ('Miguel','156456454','2500.00');
+create table Acompanhante (
+	idAcompanhante int,
+    nome varchar(45),
+    relacao varchar(60),
+    dtNasc date,
+    fkFunc int,
+    primary key(idAcompanhante, fkFunc),
+    foreign key (fkFunc) references funcionario(idFunc)
+);
+
+
+
+alter table funcionario add column fkSetor int, add foreign key (fkSetor) references funcionario(idFunc);
+
+insert into acompanhante values
+ ('1','Tales','Amigo','2000-07-17','1'),
+ ('2','Eduardo','Amigo','2000-03-20','2'),
+ ('3','Patricia','Madrinha','1978-09-14','3'),
+ ('4','Matheus','Amigo','2004-03-02','4'),
+ ('5','Gabrielle','Amigo','2003-06-15','5'),
+ ('6','Eduarda','Amigo','2003-09-04','6');
+ 
+desc acompanhante;
+
+update funcionario set fkSetor = 1 where idFunc in (1,2);
+update funcionario set fkSetor = 2 where idFunc in (3,4);
+update funcionario set fkSetor = 3 where idFunc in (5,6);
+
+select * from setor;
+select * from funcionario;
+select * from acompanhante;
+
+select funcionario.*, setor.* from funcionario join setor on idSetor = fkSetor;
+select setor.nome, setor.andar, funcionario.nome as funcionario from funcionario join setor on idSetor = fkSetor; 
+
+select * from setor join funcionario on idSetor = fkSetor where Setor.nome = 'Gestor';
+
+select funcionario.nome, acompanhante.nome from funcionario join acompanhante on idFunc = fkFunc;
+
+select funcionario.nome, acompanhante.* from funcionario join acompanhante on idFunc = fkFunc where Funcionario.nome="Lincoln";
+
+select funcionario.nome, setor.nome, acompanhante.nome from funcionario join setor on idSetor = fkSetor join acompanhante on idFunc = fkFunc;
+
+drop database PraticaFuncionario;
 
