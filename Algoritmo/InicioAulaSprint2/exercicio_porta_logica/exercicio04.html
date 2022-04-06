@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    O que você come no café da manhã ?
+    <section id="section_cafe_da_manha">
+        <option value="ovos">Ovos</option>
+        <option value="leite">Leite de arroz</option>
+        <option value="bacon">Bacon</option>
+    </section>
+    <section id="section_almoco">
+        <option value="bife">Bife</option>
+        <option value="hamburguer">hamburguer de soja</option>
+        <option value="frango">frango grelhado</option>
+    </section>
+    <section id="section_janta">
+        <option value="picanha_de_soja">Pica de soja</option>
+        <option value="cupim">Cupim</option>
+        <option value="coracao">Coração</option>
+    </section>
+    <br>
+    <button onclick="verificaVegano()">Sou vegano ?</button>
+</body>
+</html>
+
+<script>
+    function verificaVegano(){
+        var manha = section_cafe_da_manha;
+        var almoco = section_almoco;
+        var janta = section_janta;
+
+        if(
+            manha == 'leite' ||
+            almoco == 'hamburguer' ||
+            janta == 'picanha_de_soja'
+        ){
+            alert("Sim, você é vegano!");
+        } else{
+            alert("Não, você não é vegano");
+        }
+    }
+</script>
