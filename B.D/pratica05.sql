@@ -228,3 +228,76 @@ select funcionario.nome, setor.nome, acompanhante.nome from funcionario join set
 
 drop database PraticaFuncionario;
 
+
+
+create database Treinador;
+
+use Treinador;
+
+create table Treinador (
+	idTreinador int primary key auto_increment,
+    nome varchar(45),
+    telefone char(12),
+    email varchar(45)
+)auto_increment = 10;
+
+alter table Treinador add fkOrientado int, add foreign key (fkOrientado) references Treinador(idTreinador);
+
+desc treinador;
+
+insert into Treinador(nome,telefone,email) values
+('Ingrid','1140028922','ingrid@gmail.com'),
+('Matheus','1140028422','matheus@gmail.com'),
+('João','1140028921','joao@gmail.com'),
+('Rafael','1144028921','rafael@gmail.com'),
+('Diego','11400287771','diego@gmail.com');
+
+update Treinador set fkOrientado = 10 where idTreinador = 13;
+update Treinador set fkOrientado = 11 where idTreinador = 12;
+update Treinador set fkOrientado = 12 where idTreinador = 11;
+update Treinador set fkOrientado = 13 where idTreinador = 10;
+
+select * from treinador;
+
+create table nadador(
+	idNadador int primary key auto_increment,
+	nome varchar(45),
+    estadoOrigem char(2),
+    dtNasc date
+    
+)auto_increment = 101;
+
+insert into nadador (nome,estadoOrigem,dtNasc) values 
+	('Gustavo','MA','1980-03-17'),
+	('Thiago','RJ','1995-05-07'),
+    ('Fernando','AL','1989-09-10'),
+    ('Fernanda','GO','1985-12-15'),
+    ('Willian','ES','1996-07-27'),
+    ('Roberta','BA','1999-12-31');
+
+alter table nadador add fkTreinador int, add foreign key (fkTreinador) references Treinador(idTreinador);
+
+update nadador set fkTreinador = 14 where idNadador = 101;
+update nadador set fkTreinador = 14 where idNadador = 102;
+update nadador set fkTreinador = 13 where idNadador = 103;
+update nadador set fkTreinador = 12 where idNadador = 104;
+update nadador set fkTreinador = 11 where idNadador = 105;
+update nadador set fkTreinador = 10 where idNadador = 106;
+
+select * from treinador;
+
+select Treinador.nome, Nadador.nome from treinador join nadador on idTreinador=fkTreinador;
+
+select Treinador.nome, nadador.* from treinador join nadador on idTreinador=fkTreinador where Treinador.nome = 'Diego';
+
+select Treinador.nome, orientado.nome as orientado from treinador join treinador as orientado on orientado.idTreinador = Treinador.fkOrientado;
+
+select Treinador.*, orientado.nome as orientado from treinador join treinador as orientado on orientado.idTreinador = Treinador.fkOrientado where orientado.nome = 'Ingrid';
+
+select Treinador.*, orientado.nome as orientado, nadador.nome as nadador from treinador join treinador as orientado on orientado.idTreinador = Treinador.fkOrientado join nadador on Treinador.idTreinador = fkTreinador; 
+
+select Treinador.nome, nadador.*, orientado.nome from treinador join nadador on idTreinador=fkTreinador join treinador as orientado on orientado.idTreinador = Treinador.fkOrientado;
+
+drop table treinador;
+drop table nadador;
+
