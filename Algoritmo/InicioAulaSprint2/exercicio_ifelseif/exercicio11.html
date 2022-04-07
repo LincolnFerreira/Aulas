@@ -38,44 +38,40 @@
 <script>
         function verificaEstacao() {
 
-                if (id_estacao.value == 'janeiro') {
+                if (
+                id_estacao.value == 'janeiro' ||
+                id_estacao.value == 'fevereiro' ||
+                id_estacao.value == 'dezembro'
+                    ) {
                         // div_resultado.innerHTML = "<img src='inverno.jpg'>";
                         inverno();
-                } else if (id_estacao.value == 'fevereiro') {
-                        // div_resultado.innerHTML = "<img src='inverno.jpg'>";
-                        inverno();
-                } else if (id_estacao.value == 'marco') {
-                        // div_resultado.innerHTML = "<img src='inverno.jpg'>";
-                        primavera();
-                } else if (id_estacao.value == 'abril') {
+                } else if (
+                        id_estacao.value == 'marco' ||
+                        id_estacao.value == 'abril'||
+                        id_estacao.value == 'maio'
+                           ) {
                         // div_resultado.innerHTML = "<img src='inverno.jpg'>";
                         primavera();
-                } else if (id_estacao.value == 'maio') {
-                        // div_resultado.innerHTML = "<img src='inverno.jpg'>";
-                        primavera();
-                } else if (id_estacao.value == 'junho') {
+
+                } else if (
+                        id_estacao.value == 'junho'||
+                        id_estacao.value == 'julho'||
+                        id_estacao.value == 'agosto'
+                        ) {
                         // div_resultado.innerHTML = "<img src='verao.jpg'>";
                         verao();
-                } else if (id_estacao.value == 'julho') {
-                        // div_resultado.innerHTML = "<img src='verao.jpg'>";
-                        verao();
-                } else if (id_estacao.value == 'agosto') {
-                        // div_resultado.innerHTML = "<img src='verao.jpg'>";
-                        verao();
-                } else if (id_estacao.value == 'setembro') {
+
+                } else if (
+                        id_estacao.value == 'setembro'||
+                        id_estacao.value == 'outubro' ||
+                        id_estacao.value == 'novembro'
+                        ) {
                         // div_resultado.innerHTML = "<img src='outono.jpg'>";
                         outono();
-                } else if (id_estacao.value == 'outubro') {
-                        // div_resultado.innerHTML = "<img src='outono.jpg'>";
-                        outono();
-                } else if (id_estacao.value == 'novembro') {
-                        // div_resultado.innerHTML = "<img src='outono.jpg'>";
-                        outono();
-                } else {
-                        // div_resultado.innerHTML = "<img src='inverno.jpg'>";
-                        inverno();
-                }
-        }
+
+                        };
+                };
+
         function inverno() {
                 var primavera = body_image.style.backgroundImage = "url(invernowall.png)";
                 div_image.style.backgroundImage = "url(neve.gif.crdownload)";

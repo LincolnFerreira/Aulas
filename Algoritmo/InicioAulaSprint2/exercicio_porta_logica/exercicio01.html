@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        Qual a idade do usuario ? <input type="text" id="input_idade">
+        <br>
+        Qual o peso do usuario ? <input type="text" id="input_peso">
+        <br>
+        <button>Pode brincar?</button>
+        <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function verificador(){
+        var idade = Number(input_idade.value);
+        var peso = Number(input_peso.value);
+
+        if(idade > 15 && peso <=100){
+            div_resultado.innerHTML = `Você poderá brincar sorriso  -> Caso a idade for maior que 15 e o peso for até 100kg`;
+        } else{
+            div_resultado.innerHTML =`Você não poderá brincar triste  -> Caso a idade for até 15 e o peso for mais de 100kg`;
+        }
+    }
+</script>

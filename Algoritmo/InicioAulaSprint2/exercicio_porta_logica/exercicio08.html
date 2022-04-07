@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    qual o nome da empresa ? <input type="text" id="input_nome_empresa">
+    <br>
+    qual o valor da bolsa ? <input type="text" id="input_valor_bolsa">
+    <br>
+    qual o valor do VR ? <input type="text" id="input_valor_vr">
+    <br>
+    qual o tempo de deslocamento da empresa para a SPTECH ? <input type="text" id="input_tempo_deslocamento">
+    <br>
+    <button onclick="verificaPreferida()">É preferida?</button>
+    <br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function verificaPreferida(){
+        var nome = input_nome_empresa.value;
+        var bolsa = Number(input_valor_bolsa.value);
+        var vr = Number(input_valor_vr.value);
+        var tempo = Number(input_tempo.value);
+
+        if(bolsa >= 1800 || vr  >= 20 || tempo <= 30){
+            div_resultado.innerHTML = `A empresa ${nome} é uma de suas preferências`;
+        } else {
+        div_resultado.innerHTML = `A empresa ${nome} está fora da sua lista`;
+        }
+    }
+</script>
