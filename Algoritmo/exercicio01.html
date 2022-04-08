@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select name="" id="select_rua_a">
+        <option value="0">Parado</option>
+        <option value="1">Andando</option>
+    </select>
+    <br>
+    <select name="" id="select_rua_b">
+        <option value="0">Parado</option>
+        <option value="1">Andando</option>
+    </select>
+    <br>
+    <button onclick="simular()">Simular</button>
+    <br><br>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+
+    function simular() { // Porta XOR
+        var ruaA = Number(select_rua_a.value);
+        var ruaB = Number(select_rua_b.value);
+        if (ruaA == 1 && ruaB == 1) {
+            div_resultado.innerHTML = `Risco de Colisão`;
+        } else if (ruaA == 0 && ruaB == 0) {
+            div_resultado.innerHTML = `Risco de engarrafamento`;
+        } else {
+            div_resultado.innerHTML = `Fluxo perfeito`;
+        }
+    }
+</script>

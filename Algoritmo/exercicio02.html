@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select name="" id="select_a">
+        <option value="0">Carnes e derivados de animais</option>
+        <option value="1">Apenas opções veganas</option>
+    </select>
+    <br>
+    <select name="" id="select_b">
+        <option value="0">Carnes e derivados de animais</option>
+        <option value="1">Apenas opções veganas</option>
+    </select>
+    <br>
+    <button onclick="simular()">Simular</button>
+    <br><br>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    function simular() { //Porta XNOR
+        var ruaA = Number(select_rua_a.value);
+        var ruaB = Number(select_rua_b.value);
+        if (ruaA == 1 && ruaB == 1) {
+            div_resultado.innerHTML = `Para uma taxa de sucesso de 100% dessa festa, é melhor ir de veggie`;
+        } else if (ruaA == 0 && ruaB == 0) {
+            div_resultado.innerHTML = `Tá tudo liberado, pode servir o que quiser :D`;
+        } else {
+            div_resultado.innerHTML = `A festa tem uma probabilidade de fracasso de 42%`;
+        }
+    }
+</script>
