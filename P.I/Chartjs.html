@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="display: flex; flex-direction: row; position: relative; width: 40vw;height: 40vh;">
+        <canvas id="myChart"></canvas>
+        <canvas id="myChart2"></canvas>
+    </div>
+
+</body>
+
+</html>
+<script>
+    //vetor de labels
+    const labels = [
+        '12:00',
+        '13:00',
+        '14:00',
+        '15:00',
+        '16:00',
+        '17:00',
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+                label: 'My First dataset',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [30, 29, 28, 25, 22, 23],
+            },
+            {
+                label: 'My First dataset 2',
+                backgroundColor: 'rgb(25, 140, 255)',
+                borderColor: 'rgb(25, 140, 255)',
+                data: [80, 82, 80, 85, 80, 83],
+            }
+        ]
+    }
+    const labels2 = [
+        'Janeiro',
+        'Fevereiro',
+        'Março',
+        'Abril',
+        'Maio',
+        'Junho',
+    ];
+    const data2 = {
+        labels: labels2,
+        datasets: [{
+                label: 'My Second dataset',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [22, 24, 27, 23, 20, 18],
+            },
+            {
+                label: 'My Second dataset 2',
+                backgroundColor: 'rgb(25, 140, 255)',
+                borderColor: 'rgb(25, 140, 255)',
+                data: [90, 89, 93, 87, 88, 82],
+            }
+        ]
+    }
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+    };
+    const config2 = {
+        type: 'bar',
+        data: data2,
+        options: {}
+    };
+</script>
+<script>
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config2
+    );
+</script>

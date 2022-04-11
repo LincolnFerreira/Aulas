@@ -10,10 +10,31 @@
     qual a nota da avaliação <input type="text" id="input_nota_avaliacao">
     <br>
     <button onclick="avaliar()">Avaliar</button>
+    <br>
+    <div style="width: 78%; background-color: white;">
+    <div id="div_estrela" style="width: 50%; height: 300px; display: flex; flex-direction: row;">
+    <img src="estrela-fundo-branco.png" width="300px">
+    <img src="estrela-fundo-branco.png" width="300px">
+    <img src="estrela-fundo-branco.png" width="300px">
+    <img src="estrela-fundo-branco.png" width="300px">
+    <img src="estrela-fundo-branco.png" width="300px">
+    </div>
+    </div>
 </body>
 </html>
 
 <script>
+    function avaliar(){
     var nota = Number(input_nota_avaliacao.value);
-    
+    if(nota < 5 && nota < 0){
+        alert("Nota inválida. Digite de 0 a 5");
+    }else if (nota < 0.5){
+        div_estrela.style.backgroundColor = 'grey';
+        div_estrela.style.width = '78vw';
+    }else {
+        div_estrela.style.backgroundColor = 'yellow';
+        var tamanho = ((nota*100)/5) ;
+        div_estrela.style.width = `${tamanho}%`;
+    }
+}
 </script>
