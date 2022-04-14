@@ -67,6 +67,7 @@ create table Acompanhante (
     primary key (idAcompanhante,fkAluno),
     foreign key (fkAluno) references aluno(idAluno)
 );
+
 desc aluno;
 
 
@@ -77,9 +78,11 @@ insert into Acompanhante values
     ('4','João','Irmão','01221151'),
     ('5','JP','Amigo','01221141'),
 	('6','Ana','Amigo','01221139');
+    
 select * from acompanhante;
 
 select aluno.*,projeto.* from aluno join projeto on idProjeto = fkProjeto;
+
  -- arrumadinho 
 select aluno.nome as 'Nome do aluno' ,projeto.nome as 'Nome do projeto', projeto.descricao as 'Descrição do projeto' from aluno join projeto on idProjeto = fkProjeto;
 
@@ -93,8 +96,64 @@ drop table aluno;
 drop database AlunoProjeto;
 
 select * from aluno,projeto;
+
 select aluno.*, projeto.*, acompanhante.* from aluno join projeto on fkProjeto = idProjeto join acompanhante on idAluno = fkAluno;
 
 
 select aluno.nome as 'nome do Aluno', projeto.nome as 'nome do projeto', acompanhante.nome as 'nome do acompanhante', representante.nome 'Representante do aluno' from aluno join projeto on fkProjeto = idProjeto join acompanhante on idAluno = fkAluno join aluno as representante on representante.fkRepresentante = aluno.idAluno;
+
+
+
+create database Campanha;
+
+use Campanha;
+
+
+create table organizador(
+    idOrganizador int primary key auto_increment,
+    nome varchar(45),
+    rua varchar(45),
+    bairro varchar(45),
+    email varchar(45)
+
+)auto_increment = 500;
+
+create table campanha (
+    idCampanha int primary key auto_increment,
+    categoria char(25) check (categoria = 'alimento' or categoria = 'produto de higiene' or categoria = 'máscaras de proteção' or categoria = 'etc'),
+    instituicao varchar(45),
+    instituicao2 varchar(45),
+    dtFinalCampanha varchar(45)
+)auto_increment = 30;
+
+
+alter table organizador add fkCampanha int, add foreign key (fkCampanha) references organizador(idOrganizador);
+alter table  organizador add fkOrganizadorExp int, add foreign key (fkOrganizadorExp) references organizador(idOrganizador);
+
+insert into organizador (nome,rua,bairro,email) values 
+    ('Alícia','Travessa Pirani','Itacaranha','alicia-carvalho98@vbrasildigital.net'),
+    ('Luan','Rodovia Lauro Pamplona','Valada Itoupava','luan.diogo.silveira@brasildakar.com.br'),
+    ('Diogo','José Carlos Barbosa de Faro','Jabotiana','diogo-damata74@tanet.com.br'),
+    ('Matheus','Rua B','São Francisco','matheus-assis97@studiodeideias.com'),
+    ('Thiago','Rua Silveira','Autódromo','thiago-novaes86@agen-pegeuot.com.br'),
+    ('Regina','Rua Jari','São José Operário','regina_stella_duarte@qmagico.com.br'),
+    ('Rodrigo','Rua Joel José Dias','Parque Xerém','rodrigo.geraldo.aparicio@alphacandies.com.br');
+
+insert into campanha (categoria,instituicao,instituicao2,dtFinalCampanha) values 
+    ('alimento','alimentabem','cestafamilia','2022/08/19'),
+    ('produto de higiene','limpamais','higienepopular','2022/06/14'),
+    ('máscaras de proteção','protegeplus','mascaraamiga','2022/07/09'),
+    ('etc','derivadospopular','aleatoriocamp','2022/12/01');
+
+update organizador set fkCampanha = 1 where idOrganizador = 501;
+update organizador set fkCampanha = 2 where idOrganizador = 502;
+update organizador set fkCampanha = 3 where idOrganizador = 503;
+update organizador set fkCampanha = 4 where idOrganizador = 504;
+update organizador set fkCampanha = 1 where idOrganizador = 505;
+update organizador set fkCampanha = 2 where idOrganizador = 506;
+update organizador set fkCampanha = 3 where idOrganizador = 507;
+
+
+update organizador set fkOrganizadorExp = 3 where idOrganizador = 507;
+
 
