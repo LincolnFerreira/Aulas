@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <span>frase:</span><input onkeyup="letraPorLetra()" type="text" id="input_frase">
+        <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    tamanho = 0;
+    function letraPorLetra(){
+        var frase = input_frase.value;
+        
+        div_resultado.innerHTML += `${frase[tamanho]}<br>`;
+        tamanho ++ ;
+
+    }
+</script>

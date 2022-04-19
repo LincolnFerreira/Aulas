@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifica email</title>
+</head>
+
+<body>
+    <span>Nome:</span><input type="text" id="input_nome" onkeyup="validacao()">
+    <br><br> Validacao<span id="span_validacao"></span>
+</body>
+
+</html>
+<script>
+    function validacao() {
+        var nome = input_nome.value;
+        var validacaoInicioNome = nome.trimStart();
+        var validacaoFinalNome = nome.trimEnd();
+        if (nome == "" || nome.trimStart() == "" || nome.trimEnd() == "") {
+            span_validacao.innerHTML = " Nome deve se informado!";
+            span_validacao.style.color = "red";
+        } else if (nome.indexOf("fogo") > -1) {
+            span_validacao.innerHTML = " Com fogo não se brinca!";
+            span_validacao.style.color = "red";
+        }
+        /*      else if (nome.startsWith("fogo") == true|| nome.endsWith("fogo") == true){
+                 span_validacao.innerHTML = " Com fogo não se brinca!";
+                 span_validacao.style.color = "red";
+        */
+        else {
+            span_validacao.innerHTML = " Nome OK";
+            span_validacao.style.color = "green";
+        }
+    }
+</script>

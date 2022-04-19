@@ -145,7 +145,7 @@ insert into campanha (categoria,instituicao,instituicao2,dtFinalCampanha) values
     ('máscaras de proteção','protegeplus','mascaraamiga','2022/07/09'),
     ('etc','derivadospopular','aleatoriocamp','2022/12/01');
 
-update organizador set fkCampanha = 1 where idOrganizador = 501;
+update organizador set fkCampanha = 1 where idOrganizador = '501';
 update organizador set fkCampanha = 2 where idOrganizador = 502;
 update organizador set fkCampanha = 3 where idOrganizador = 503;
 update organizador set fkCampanha = 4 where idOrganizador = 504;
@@ -154,6 +154,12 @@ update organizador set fkCampanha = 2 where idOrganizador = 506;
 update organizador set fkCampanha = 3 where idOrganizador = 507;
 
 
-update organizador set fkOrganizadorExp = 3 where idOrganizador = 507;
+update organizador set fkOrganizadorExp = 1 where idOrganizador = 31;
+update organizador set fkOrganizadorExp = 2 where idOrganizador = 32;
+update organizador set fkOrganizadorExp = 3 where idOrganizador = 33;
+update organizador set fkOrganizadorExp = 4 where idOrganizador = 34;
+update organizador set fkOrganizadorExp = 5 where idOrganizador = 35;
+update organizador set fkOrganizadorExp = 6 where idOrganizador = 36;
+update organizador set fkOrganizadorExp = 7 where idOrganizador = 37;
 
 
