@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome: <input type="text" id="input_nome">
+    Quantidade que mais ama:<input type="text" id="input_qtd_ama">
+    <button onclick="maisAma()">Expressar amor</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+   function maisAma(){
+    var i = 0;
+    var qtdMaisAma = Number(input_qtd_ama.value);
+    while( i < qtdMaisAma){
+        div_msg.innerHTML +=`${input_nome.value}<br>`;
+        i++
+    }
+   }
+</script>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="diga_algo()">Números cabalísticos</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function diga_algo(){
+        i = 0;
+        while(i < 15){
+            i +=1;
+            if( i != 3 ||  i != 4 ||  i !== 7 ||  i !== 10 ||  i !== 12 ){
+                div_msg.innerHTML +=`${i}<br>`; 
+            }
+        }
+    }
+</script>
