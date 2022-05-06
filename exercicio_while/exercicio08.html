@@ -1,12 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    Numero<input type="text" id="input_numero">
+    <button onclick="multiploDeSete()">Viva o 7!</button>
+    <div id="div_msg"></div>
 </body>
+
 </html>
+<script>
+    var acumula = 0;
+    function multiploDeSete() {
+        numero = Number(input_numero.value);
+        var i = 0;
+        if (numero < 0 || numero > 200) {
+            alert('Numero invalido');
+        } else {
+            while (i < numero){
+            if(i % 7 == 0){
+                div_msg.innerHTML +=`${i}<br>`;
+                }
+                i++;
+            }
+        }
+
+            // if(divide == 0 ){
+            // div_msg.innerHTML +=`${i}<br>`;
+            // i++;
+        }
+    
+
+
+</script>

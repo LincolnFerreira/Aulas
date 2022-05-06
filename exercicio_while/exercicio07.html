@@ -7,19 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-    Digite um número de 20 a 100:<input type="text" id="input_numero">
+    Numero<input type="text" id="input_numero">
+    <button onclick="multiploDeCinco()">Adoro múltiplos de 5</button>
+    <div id="div_msg"></div>
 </body>
 </html>
 <script>
-    function verifica(){
-        var numero = Number(input_numero.value);
-        if(numero < 20 && numero > 100){
-            while(){
-                
-            }
-        }else {
-            alert("Numero inserido está errado.");
+    function multiploDeCinco(){
+        numero = Number(input_numero.value);
+        i = 0;
+        while(i < numero ){
+            multiplo = 5 *i;
+            div_msg.innerHTML +=`5 x ${i} = ${multiplo}<br>`;
+            i++
         }
-
     }
 </script>

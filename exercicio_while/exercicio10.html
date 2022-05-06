@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    quantidade de títulos mundiais da FIFA que seu clube tem <input type="text" id="input_qtd_titulo">
+    <button onclick="verQuantidade()">Ver troféus de mundiais FIFA</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function verQuantidade(){
+        var qtdTitulo = Number(input_qtd_titulo.value);
+        var i = 0;
+        div_msg.innerHTML =``;
+        if( qtdTitulo == 0){
+            div_msg.innerHTML +=`<img src="https://thumbs.gfycat.com/KeenDopeyGentoopenguin-max-1mb.gif">`
+        }else {
+            while(i < qtdTitulo){
+            div_msg.innerHTML +=`<img src="https://thumbs.gfycat.com/KeenDopeyGentoopenguin-max-1mb.gif">`
+                
+                i++;
+            }
+        }
+    }
+</script>
