@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    quantos dias a senhora desgraça escrevendo no input, foi na academia ? HEIN ? <input type="text"
+        id="input_qtd_musculacao">
+    <button onclick="exibeRotina()">Exibir rotina mensal</button>
+    <div id="div_msg"></div>
+</body>
+
+</html>
+<script>
+    var reseta = 0;
+
+    function exibeRotina() {
+        var qtdMusculacao = Number(input_qtd_musculacao.value);
+        var i = 1;
+
+        while (i <= 30) {
+            var vai = (qtdMusculacao -1);
+            if (i == 1) {
+                div_msg.innerHTML += `Dia ${i} - Musculação <br>`;
+                i++;
+                vai--;
+            } else {
+                while (vai > 0) {
+                    div_msg.innerHTML += `Dia ${i} - Comer, dormir etc <br>`;
+                    i++;
+                    vai--;
+                }
+                if (vai == 0) {
+                    if( i == 30){
+
+                    }else{
+                        div_msg.innerHTML += `Dia ${i} - Musculação <br>`;
+                    i++;
+                    vai--;
+                    }
+
+                }
+            }
+        }
+    }
+</script>

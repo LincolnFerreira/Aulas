@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Nome do aluno: <input type="text" id="input_nome">
+    <button onclick="cadastraPesquisa()">Cadastrar / Pesquisar</button>
+    <div id="div_msg"></div>
+</body>
+
+</html>
+<script>
+    var lista = [];
+
+    function cadastraPesquisa() {
+        var qtdNomeIgual = 0;
+        var nome = input_nome.value;
+
+        lista.push(nome)
+        console.log(lista.length);
+        div_msg.innerHTML = ``;
+        for (var i = 0; i <= (lista.length - 1); i++) {
+            div_msg.innerHTML += `${lista[i]}<br>`;
+            if (lista[i] == nome) {
+                qtdNomeIgual++;
+            }
+        }
+        if (qtdNomeIgual > 1) {
+            alert(`Esse aluno aparece ${qtdNomeIgual} vezes`);
+        }
+    }
+</script>

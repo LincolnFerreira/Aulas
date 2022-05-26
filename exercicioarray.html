@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=6Nr_d6duaAMJKz576PUHOQaZg9cSnGQoo3fWUe_woh3Y3wWbwwEdAz92_Ct6WDR9oBhgvK49KmU4QicKCtJ73i2HbnqG5p0AUGf26iOI51TQyOKG9qhkr4JNcSbERbYBlCWQO50vHFhnAxakBSmakg" charset="UTF-8"></script></head>
+<body>
+    Nome de aluno: <input type="text" id="input_nome">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    var lista = [];
+    var valida = false;
+    function cadastrar(){
+        var nome = input_nome.value;
+        div_msg.innerHTML = null;
+        for (var i = 0; i < lista.length; i++){
+            if(lista[i] == nome){
+                alert("Nome já cadastrado");
+                valida = true; 
+            }else {
+            div_msg.innerHTML +=`Nome: ${lista[(i -1)]}`
+            }
+        }
+        if(!valida){
+            lista.push(nome);
+
+        }
+    }
+
+</script>

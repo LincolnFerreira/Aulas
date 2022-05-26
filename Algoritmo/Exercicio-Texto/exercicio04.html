@@ -16,6 +16,7 @@
         var email = input_email.value;
         if(email.indexOf("@")> -1 && email.indexOf(".") > -1 && email.length > 6 && email.endsWith("sptech.school")){
             span_validacao.innerHTML = "Verificado";
+            span_validacao.Color = "red";
         }else{
             span_validacao.innerHTML = "Invalido";
         }
