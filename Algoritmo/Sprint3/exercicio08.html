@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nota: <input type="text" id="input_nota">
+    n1: <input type="text" id="input_n1">
+    n2: <input type="text" id="input_n2">
+    <button onclick="cadastrar()">Cadastrar Nota</button>
+    <button onclick="reverAsNotas()">Rever as Notas</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    var listaNota = [];
+    var media = 0;
+    function limpaCampos(){
+        input_nota.value = null;
+        input_n1.value = null;
+        input_n2.value = null;
+    }
+    function cadastrar(){
+        var nota = Number(input_nota.value);
+        listaNota.push(nota);
+        limpaCampos();
+    }
+    function reverAsNotas(){
+        var n1 = Number(input_n1.value);
+        var n2 = Number(input_n2.value);
+        var diferenca = n2 - n1;
+        for(var i = n1; i <= n2 ; i++){
+            media += listaNota[i];
+            div_msg.innerHTML =`Foram cadastradas ${diferenca} notas que estão no intervalo de  ${n1} até ${n2} e a média dessas notas é ${media/2}`;
+
+        }
+        limpaCampos();
+    }
+</script>

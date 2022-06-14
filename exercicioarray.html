@@ -22,13 +22,12 @@
             if(lista[i] == nome){
                 alert("Nome já cadastrado");
                 valida = true; 
-            }else {
-            div_msg.innerHTML +=`Nome: ${lista[(i -1)]}`
             }
         }
         if(!valida){
             lista.push(nome);
-
+            for(var i = 0; i < lista.length; i++)
+            div_msg.innerHTML +=`<b>Nome:</b> ${lista[(i)]}<br>`;
         }
     }
 

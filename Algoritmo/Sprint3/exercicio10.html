@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite um número qualquer: <input type="text" id="input_numero">
+    <button onclick="analisarHistorico()">Analisar Histórico</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    var listaHistorico = [];
+    var maior = 0;
+    var menor = 0;
+
+    function analisarHistorico(){
+        var numero = Number(input_numero.value);
+        listaHistorico.push(numero);
+        div_msg.innerHTML = ``;
+        for( var i = 0; i < listaHistorico.length; i++){
+            if(listaHistorico[i] >= listaHistorico[i-1]){
+                maior = listaHistorico[i];
+            }
+            if(listaHistorico[i] <= listaHistorico[i+1]){
+                menor = listaHistorico[i-1];
+            }
+            div_msg.innerHTML += `${i}° Número: ${listaHistorico[i]}<br>`;
+
+        }
+        div_msg.innerHTML +=`
+            Maior:${maior}<br>
+            Menor:${menor}`;
+    }
+</script>

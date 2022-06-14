@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome das linhas: <input type="text" id="input_nome_linhas">
+    <button onclick="gravar()">Gravar buzão</button>
+
+    Pesquisar: <input type="text" id="input_pesquisa">
+    <button onclick="pesquisar()">Pesquisar</button>
+    
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    var listaLinhas = [];
+    var contador = 0;
+    var texto =''; 
+    function gravar(){
+        nomeLinhas = input_nome_linhas.value;
+        listaLinhas.push(nomeLinhas);    
+        
+    }
+    function pesquisar(){
+        pesquisa = input_pesquisa.value;
+        for(var i = 0; i < listaLinhas.length; i++){
+            if(pesquisa == listaLinhas[i]){
+                contador++;
+                texto +=` ${i} vez,`;
+            }
+        }
+        div_msg.innerHTML +=` Você já pegou essa linha ${contador} vezes, nessa ordem: ${texto}`;
+        
+    }
+</script>

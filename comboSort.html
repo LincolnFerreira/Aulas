@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentativa de combo Sort</title>
+</head>
+
+<body>
+    <h1>Combo sort</h1>
+    <h6>ordenador de números</h6>
+    Digite Números:<input type="text" id="input_numero">
+    <br>
+    <br>
+    <br>
+    <button onclick="insereNumero()">Inserir novo número</button>
+    <button onclick="listanaoOrdenada()">Gerar lista não ordenada</button>
+    <button onclick="listaOrdenada()">Gerar lista ordenada</button>
+</body>
+
+</html>
+
+<script>
+    var listaBackup = [];
+    var listaNumeroOrdenada = [];
+
+    function insereNumero() {
+        var numero = Number(input_numero.value);
+        listaNumeroOrdenada.push(numero);
+        listaBackup.push(numero);
+    }
+
+    //Essa função tem a tarefa de me trazer quantas vezes preciso rodar o for pro GAP chegar em 1 
+    function descobreVezesGap(numeroGap) {
+        totalVezesGap = 0;
+        if (numeroGap == 1) {
+            totalVezesGap++;
+        } else {
+            while (numeroGap > 1) {
+                numeroGap = Number(Math.floor((numeroGap / 1.3)));
+                // console.log(numeroGap);
+                totalVezesGap++;
+            }
+        }
+        console.log(totalVezesGap);
+    }
+
+    function listaOrdenada() {
+        //a ideia é criar uma lista pro GAP e uma lista pra rodar esse GAP
+        //vou utilizar o método Math.floor() para arredendar nosso GAP pra baixo
+        var vezesGap = descobreVezesGap(listaNumeroOrdenada.length);
+        var gap = Number(Math.floor((listaNumeroOrdenada.length / 1.3)));
+        for (var i = 0; i < vezesGap; i++) {
+            gap = Number(Math.floor((listaNumeroOrdenada.length / 1.3)));
+
+            for (var i = 0; i < listaNumeroOrdenada.length; i++) {
+                var numeroGapMinimo = listaNumeroOrdenada[i];
+                var numeroGapMaximo = listaNumeroOrdenada[i + vezesGap];
+                if (numeroGapMaximo == undefined) {
+                    return;
+                } else if (numeroGapMinimo < numeroGapMaximo) {
+                    var numeroTemp = numeroGapMinimo;
+                } else {
+                    var numeroTemp = numeroGapMaximo;
+                }
+            }
+        }
+    }
+</script>
